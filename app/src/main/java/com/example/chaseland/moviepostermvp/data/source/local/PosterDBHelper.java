@@ -10,29 +10,36 @@ import android.database.sqlite.SQLiteOpenHelper;
 
 public class PosterDBHelper extends SQLiteOpenHelper {
 
-    public static final int DATABASE_VERSION = 1;
+    private final String  SQL_CREATE_POSTER_TABLE = "CREATE TABLE "
+            + PosterPersistenceContract.PosterEntry.TABLE_NAME
+            + " (" + PosterPersistenceContract.PosterEntry.ID_COLUMN + " INTEGER PRIMARY KEY, " +
+            PosterPersistenceContract.PosterEntry.IMAGE_PATH_COLUMN + " TEXT , " +
+            PosterPersistenceContract.PosterEntry.TITLE_COLUMN + " TEXT , " +
+            PosterPersistenceContract.PosterEntry.DESCRIPTION_COLUMN + " TEXT , "+
+            PosterPersistenceContract.PosterEntry.VOTE_COLUMN + " TEXT , " +
+
+            PosterPersistenceContract.PosterEntry.RELEASE_DATE_COLUMN + " TEXT, " +
+            " UNIQUE ("+ PosterPersistenceContract.PosterEntry.ID_COLUMN +") ON CONFLICT REPLACE);";
+
+    public static final int DATABASE_VERSION = 4;
     public static final String DATABASE_NAME = "Posters.db";
+
     public PosterDBHelper(Context context)
     {
         super(context, DATABASE_NAME, null, DATABASE_VERSION);
     }
     @Override
     public void onCreate(SQLiteDatabase db) {
-//        final String SQL_CREATE_POSTER_TABLE = "CREATE TABLE "
-//                + MoviePosterContract.PosterEntry.TABLE_NAME
-//                + " (" + MoviePosterContract.PosterEntry.COLUMN_MOVIE_ID + " INTEGER PRIMARY KEY, " +
-//                MoviePosterContract.PosterEntry.COLUMN_POSTER_PATH + " TEXT , " +
-//                MoviePosterContract.PosterEntry.COLUMN_MOVIE_TITLE + " TEXT , " +
-//                MoviePosterContract.PosterEntry.COLUMN_MOVIE_DESCRIPTION + " TEXT , "+
-//                MoviePosterContract.PosterEntry.COLUMN_VOTE + " TEXT , " +
-//
-//                MoviePosterContract.PosterEntry.COLUMN_RELEASE_DATE + " TEXT, " +
-//                " UNIQUE ("+ MoviePosterContract.PosterEntry.COLUMN_MOVIE_ID +") ON CONFLICT REPLACE);";
+        db.execSQL(SQL_CREATE_POSTER_TABLE);
 
     }
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        if(newVersion > oldVersion){
+            onCreate(db);
+
+        }
 
     }
 }

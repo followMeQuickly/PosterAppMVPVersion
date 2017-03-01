@@ -14,7 +14,7 @@ public final class PosterPersistenceContract {
         public static final String TITLE_COLUMN = "title";
         public static final String DESCRIPTION_COLUMN = "description";
         public static final String VOTE_COLUMN = "vote";
-        public static final String RELEASEDATE_COLUMN = "releaseDate";
+        public static final String RELEASE_DATE_COLUMN = "releaseDate";
         public static final String FAVORITE_COLUMN = "favorited";
 
 

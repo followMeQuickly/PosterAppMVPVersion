@@ -1,9 +1,5 @@
 [
     {
-        "merged": "/Users/chaseland/Downloads/MoviePosterMVP/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
-        "source": "/Users/chaseland/Downloads/MoviePosterMVP/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
-    },
-    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi/ic_launcher.png",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
     }

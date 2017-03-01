@@ -5,4 +5,9 @@ package com.example.chaseland.moviepostermvp.posters;
  */
 
 public enum PosterFilterType {
+
+    ALL_POSTERS,
+    POPULAR,
+    HIGHEST_RATED,
+    FAVORITE
 }

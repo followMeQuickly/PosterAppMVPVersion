@@ -1,29 +1,5 @@
 [
     {
-        "outputFile": "/Users/chaseland/Downloads/MoviePosterMVP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
-        "map": [
-            {
-                "to": {
-                    "startLine": 2,
-                    "startColumn": 4,
-                    "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
-                },
-                "from": {
-                    "file": "/Users/chaseland/Downloads/MoviePosterMVP/app/src/main/res/values-w820dp/dimens.xml",
-                    "position": {
-                        "startLine": 4,
-                        "startColumn": 4,
-                        "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
-                    }
-                }
-            }
-        ]
-    },
-    {
         "outputFile": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
         "map": [
             {
@@ -31,8 +7,8 @@
                     "startLine": 2,
                     "startColumn": 4,
                     "startOffset": 55,
-                    "endColumn": 57,
-                    "endOffset": 108
+                    "endColumn": 43,
+                    "endOffset": 94
                 },
                 "from": {
                     "file": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/values-w820dp/dimens.xml",
@@ -40,8 +16,8 @@
                         "startLine": 4,
                         "startColumn": 4,
                         "startOffset": 291,
-                        "endColumn": 57,
-                        "endOffset": 344
+                        "endColumn": 43,
+                        "endOffset": 330
                     }
                 }
             }

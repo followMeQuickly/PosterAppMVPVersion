@@ -11,7 +11,7 @@ import java.util.List;
  */
 
 public interface PostersContract {
-    interface View extends BaseView<Presenter>{
+        interface PosterView extends BaseView<Presenter>{
 
         void showPosters(List<Poster> posters);
 
@@ -24,18 +24,24 @@ public interface PostersContract {
         void showFavoritedPosters();
 
         void showPostersLoadingError();
+
+        boolean isActive();
+
+
+
+
+
+        }
+    interface Presenter extends BasePresenter{
+
+        void result(int requestCode, int resultCode);
+
+        void loadPosters(boolean forceUpdate);
+
+        void favoritePoster(Poster favoritedPoster);
+
+        void changeFilterType(PosterFilterType filterType);
+
+        void OpenPosterDetails(Poster requestedPoster);
     }
-}
-interface Presenter extends BasePresenter{
-
-    void result(int requestCode, int resultCode);
-
-    void loadPosters(boolean forceUpdate);
-
-    void FavoritePoster(Poster favoritedPoster);
-
-    void OpenPosterDetails(Poster requestedPoster);
-
-
-
 }

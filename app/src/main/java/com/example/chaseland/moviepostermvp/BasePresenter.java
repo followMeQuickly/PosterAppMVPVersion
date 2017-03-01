@@ -5,4 +5,5 @@ package com.example.chaseland.moviepostermvp;
  */
 
 public interface BasePresenter {
+    void Start();
 }
