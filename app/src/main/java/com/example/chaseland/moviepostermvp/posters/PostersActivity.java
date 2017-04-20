@@ -1,19 +1,16 @@
 package com.example.chaseland.moviepostermvp.posters;
 
+import android.os.Bundle;
 import android.support.design.widget.NavigationView;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
 import com.example.chaseland.moviepostermvp.Injection;
 import com.example.chaseland.moviepostermvp.R;
 import com.example.chaseland.moviepostermvp.Util.ActivityUtils;
-import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
-import com.example.chaseland.moviepostermvp.data.source.local.LocalPosterDataSource;
-import com.example.chaseland.moviepostermvp.data.source.remote.PosterRemoteDataSource;
 
 public class PostersActivity extends AppCompatActivity {
 
@@ -42,9 +39,8 @@ public class PostersActivity extends AppCompatActivity {
                 (PostersFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
         if(postersFragment == null){
             postersFragment = PostersFragment.newInstance();
-            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), postersFragment, R.id.contentFrame);
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), postersFragment, R.id.contentFrame, null);
         }
-        PosterRepository repo = PosterRepository.GetInstance(LocalPosterDataSource.getInstance(this), PosterRemoteDataSource.GetInstance());
         this.PosterPresenter = new PostersPresenter(Injection.provideRepository(this), postersFragment);
 
     }

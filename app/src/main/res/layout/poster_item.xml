@@ -14,7 +14,7 @@
 
         <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
         <!--/>-->
-    <ImageView
+    <android.support.v7.widget.AppCompatImageView
         android:id="@+id/poster_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -22,6 +22,6 @@
         android:adjustViewBounds="true"
         android:padding="1dp"
         android:elevation="8dp"
-        android:transitionName="posterDetailImageSource"
+        android:transitionName="Target"
         />
 </LinearLayout>

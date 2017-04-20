@@ -15,10 +15,13 @@
  */
 
 package com.example.chaseland.moviepostermvp.Util;
+
 import android.support.annotation.NonNull;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentTransaction;
+import android.support.v4.util.Pair;
+import android.view.View;
 
 //import static com.google.common.base.Preconditions.checkNotNull;
 
@@ -33,11 +36,19 @@ public class ActivityUtils {
      *
      */
     public static void addFragmentToActivity (@NonNull FragmentManager fragmentManager,
-                                              @NonNull Fragment fragment, int frameId) {
+                                              @NonNull Fragment fragment, int frameId, Pair<View,String> elementTransitionInfo) {
 //        checkNotNull(fragmentManager);
 //        checkNotNull(fragment);
+
         FragmentTransaction transaction = fragmentManager.beginTransaction();
-        transaction.add(frameId, fragment);
+        transaction.replace(frameId, fragment);
+        if(elementTransitionInfo != null)
+        {
+            View sharedElement = elementTransitionInfo.first;
+            String transitionId = elementTransitionInfo.second;
+            transaction.addSharedElement(sharedElement, transitionId);
+
+        }
         transaction.commit();
     }
 

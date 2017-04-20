@@ -1,7 +1,6 @@
 package com.example.chaseland.moviepostermvp.posters;
 
 
-import android.app.ActivityOptions;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -66,7 +65,7 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
 
 
         RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.gridview);
-        recyclerView.setHasFixedSize(false);
+        recyclerView.setHasFixedSize(true);
 
         int tilePadding = 8;
         recyclerView.setPadding(tilePadding, tilePadding, tilePadding, tilePadding);
@@ -126,18 +125,11 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
 
         Intent intent = new Intent(getContext(), PosterDetailActivity.class);
         intent.putExtra(PosterDetailActivity.TASK_DETAIL_ID, posterId);
-        ImageView sharedView =(ImageView) clickedView.findViewById(R.id.poster_image);
-        intent.setAction(Intent.ACTION_VIEW);
-        sharedView.setTransitionName("Target");
-        intent.putExtra(PosterDetailActivity.TASK_DETAIL_TRANSITION_NAME, sharedView.getTransitionName());
-        //intent.putExtra("EXTRA_PHOTO", (Parcelable) ((ImageView) clickedView).getDrawable());
+        startActivity(intent);
+
+            // Call some material design APIs here
 
 
-        startActivity(intent,
-                ActivityOptions.makeSceneTransitionAnimation(
-                        getActivity(),
-                        sharedView,
-                        getString(R.string.detail_target)).toBundle());
 
     }
 
@@ -220,12 +212,7 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
 
         public void setPosterInfo(final Poster poster) {
 
-
-            // todo: set poster info to views here
-            //TextView titleTextView = (TextView) itemView.findViewById(R.id.title);
             ImageView imageView = (ImageView) itemView.findViewById(R.id.poster_image);
-            imageView.setTransitionName("PosterImage" + poster.getId());
-            //titleTextView.setText(poster.getTitle());
             Picasso.with(itemView.getContext()).load(poster.getImagePath()).into(imageView);
 
             clickedView = imageView;
@@ -238,8 +225,6 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
                 public void onClick(View v) {
                     posterItemListener.onClick(poster);
                     clickedView = v;
-
-
                 }
 
             });

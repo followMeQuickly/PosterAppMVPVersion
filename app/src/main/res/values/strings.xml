@@ -3,5 +3,6 @@
     <string name="no_posters_add">no posters to add</string>
     <string name="no_posters_all">no posters</string>
     <string name="navigationHeaderText">navigation header test</string>
-    <string name="detail_target">posterDetailImageTarget</string>
+    <string name="detail_target">Target</string>
+    <string name="transaction_header">Target</string>
 </resources>

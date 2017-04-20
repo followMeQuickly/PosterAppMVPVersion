@@ -1,7 +1,6 @@
 package com.example.chaseland.moviepostermvp.posterDetail;
 
 import android.os.Bundle;
-import android.os.PersistableBundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 
@@ -25,13 +24,14 @@ public class PosterDetailActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_poster_detail);
+        supportPostponeEnterTransition();
         PosterDetailFragment fragment = (PosterDetailFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
 
         String posterId = getIntent().getStringExtra(TASK_DETAIL_ID);
         String transitionName = getIntent().getStringExtra(TASK_DETAIL_TRANSITION_NAME);
         if (fragment == null) {
-            fragment = PosterDetailFragment.newInstance(posterId, transitionName);
-            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), fragment, R.id.contentFrame);
+            fragment = PosterDetailFragment.newInstance(posterId);
+            ActivityUtils.addFragmentToActivity(getSupportFragmentManager(), fragment, R.id.contentFrame, null);
 
         }
         PosterRepository repo = PosterRepository.GetInstance(LocalPosterDataSource.getInstance(this), PosterRemoteDataSource.GetInstance());
@@ -39,10 +39,5 @@ public class PosterDetailActivity extends AppCompatActivity {
         new PosterDetailPresenter(posterId, fragment, repo);
     }
 
-    @Override
-    public void onCreate(Bundle savedInstanceState, PersistableBundle persistentState) {
-        super.onCreate(savedInstanceState, persistentState);
 
-
-    }
 }

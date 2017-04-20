@@ -27,20 +27,24 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     private ImageView PosterImageView;
 
 
-    public static PosterDetailFragment newInstance(String id, String transitionName){
+    public static PosterDetailFragment newInstance(String id){
         Bundle args = new Bundle();
         args.putString(POSTER_ID_KEY, id);
-        args.putString(POSTER_IMAGE_TRANSITION_KEY, transitionName);
         PosterDetailFragment fragment = new PosterDetailFragment();
         fragment.setArguments(args);
         return fragment;
+    }
+
+    @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        getActivity().supportStartPostponedEnterTransition();;
     }
 
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_poster_detail, container, false);
-
         TitleTextView = (TextView)root.findViewById(R.id.poster_detail_title);
         PosterImageView = (ImageView) root.findViewById(R.id.poster_detail_image);
 
@@ -58,7 +62,11 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
     @Override
     public void showPosterImage(String imageUrl) {
-        Picasso.with(getActivity()).load(imageUrl).into(PosterImageView);
+        //todo: create interface to abstract away loading images
+        Picasso.with(getActivity())
+                .load(imageUrl)
+                .fit()
+                .into(PosterImageView);
     }
 
     @Override

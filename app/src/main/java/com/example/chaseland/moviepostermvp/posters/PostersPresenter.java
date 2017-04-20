@@ -21,12 +21,16 @@ public class PostersPresenter implements PostersContract.Presenter {
     private PosterFilterType currentFiltering = PosterFilterType.ALL_POSTERS;
 
 
+    private static int x;
+
+
     private boolean mFirstLoad = true;
 
     public PostersPresenter(PosterRepository posterRepository, PostersContract.PosterView posterView) {
         this.posterRepository = posterRepository;
         this.posterView = posterView;
         this.posterView.setPresenter(this);
+        System.out.println();
     }
 
     @Override
