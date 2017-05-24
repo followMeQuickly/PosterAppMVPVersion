@@ -1,7 +1,5 @@
 package com.example.chaseland.moviepostermvp.data;
 
-import java.util.List;
-
 /**
  * Created by chaseland on 2/7/17.
  */
@@ -9,6 +7,18 @@ import java.util.List;
 public class Review {
     //todo: add in review details
 
-    public Review() {
+    private String author;
+    private String content;
+    public Review(String author, String content) {
+        this.author = author;
+        this.content = content;
+    }
+
+    public String getAuthor(){
+        return author;
+    }
+
+    public String getContent(){
+        return content;
     }
 }

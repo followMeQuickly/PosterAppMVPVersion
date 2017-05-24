@@ -18,6 +18,7 @@ public class PostersPresenter implements PostersContract.Presenter {
 
     private final PostersContract.PosterView posterView;
 
+
     private PosterFilterType currentFiltering = PosterFilterType.ALL_POSTERS;
 
 
@@ -61,11 +62,6 @@ public class PostersPresenter implements PostersContract.Presenter {
 
                 List<Poster> postersToShow = new ArrayList<Poster>();
 
-                // This callback may be called twice, once for the cache and once for loading
-                // the data from the server API, so we check before decrementing, otherwise
-                // it throws "Counter has been corrupted!" exception.
-
-
                 // do not use foreach loops because chet haase says so
                 for(int i = 0; i < posters.size(); i++){
                     Poster poster = posters.get(i);
@@ -77,33 +73,20 @@ public class PostersPresenter implements PostersContract.Presenter {
                             // log weird error
                             postersToShow.add(poster);
                             break;
-
-
                     }
 
                 }
-//                if (!posterView.isActive()){
-//                    return;
-//
-//                }
-
                 processPosters(postersToShow);
             }
 
-            
-
             @Override
             public void onDataNotAvailable() {
-//
 
             }
         }, currentFiltering);
     }
 
     private void processPosters(List<Poster> postersToShow) {
-        if(postersToShow.isEmpty()){
-
-        }
         posterView.showPosters(postersToShow);
     }
 
@@ -123,7 +106,6 @@ public class PostersPresenter implements PostersContract.Presenter {
         currentFiltering = filterType;
     }
 
-    @Override
     public void OpenPosterDetails(Poster requestedPoster) {
         posterView.showPosterDetailsUI(requestedPoster.getId());
 

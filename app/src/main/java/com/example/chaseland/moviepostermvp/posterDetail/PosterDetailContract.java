@@ -3,6 +3,9 @@ package com.example.chaseland.moviepostermvp.posterDetail;
 import com.example.chaseland.moviepostermvp.BasePresenter;
 import com.example.chaseland.moviepostermvp.BaseView;
 import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Review;
+
+import java.util.List;
 
 /**
  * Created by chaseland on 1/30/17.
@@ -16,11 +19,16 @@ public interface PosterDetailContract {
 
         void favoritePoster();
 
-        void showTitle(String Title);
+        void showPosterDetails(Poster posterDetails);
 
         void hideTitle();
 
-        void showReviews();
+        void showReviews(List<Review> review);
+
+
+        void showTrailerImage();
+
+
 
         void hideReviews();
 

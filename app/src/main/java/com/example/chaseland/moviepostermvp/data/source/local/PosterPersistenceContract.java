@@ -20,4 +20,11 @@ public final class PosterPersistenceContract {
 
 
     }
+
+    public static abstract class ReviewEntry implements BaseColumns {
+        public static final String TABLE_NAME = "Posters";
+        public static final String ID_COLUMN = "id";
+        public static final String IMAGE_PATH_COLUMN = "imagePath";
+        public static final String TRAILER_IMAGE_PATH_COLUMN = "trailerImagePath";
+    }
 }

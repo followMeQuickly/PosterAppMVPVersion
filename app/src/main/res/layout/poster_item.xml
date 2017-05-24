@@ -4,16 +4,6 @@
     android:orientation="horizontal"
     android:padding="@dimen/list_item_padding">
 
-
-<!--todo: figure out if I want to keep the text view-->
-    <!--<TextView-->
-        <!--android:id="@+id/title"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_gravity="center_vertical"-->
-
-        <!--android:textAppearance="@style/TextAppearance.AppCompat.Title"-->
-        <!--/>-->
     <android.support.v7.widget.AppCompatImageView
         android:id="@+id/poster_image"
         android:layout_width="match_parent"
@@ -22,6 +12,5 @@
         android:adjustViewBounds="true"
         android:padding="1dp"
         android:elevation="8dp"
-        android:transitionName="Target"
         />
 </LinearLayout>

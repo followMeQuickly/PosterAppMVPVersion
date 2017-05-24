@@ -39,6 +39,12 @@ public class PosterRepository implements PosterSource {
         return INSTANCE;
 
     }
+
+    @Override
+    public void refreshTrailers() {
+
+    }
+
     @Override
     public void getPosters(@NonNull final LoadPostersCallback callback, final PosterFilterType filtering) {
 
@@ -65,7 +71,6 @@ public class PosterRepository implements PosterSource {
                 }
             },filtering);
         }
-
     }
 
     private void getPostersFromRemoteDataSource(final LoadPostersCallback callback, PosterFilterType filterType) {
@@ -134,6 +139,17 @@ public class PosterRepository implements PosterSource {
 
     @Override
     public void deletePoster(String posterId) {
+
+    }
+
+    @Override
+    public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
+        remoteRepo.getReviews(callback, posterId);
+
+    }
+
+    @Override
+    public void refreshReviews() {
 
     }
 }

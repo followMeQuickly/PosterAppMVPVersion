@@ -1,8 +1,11 @@
 package com.example.chaseland.moviepostermvp.posterDetail;
 
+import android.content.Context;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,7 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.chaseland.moviepostermvp.R;
+import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Review;
 import com.squareup.picasso.Picasso;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Created by chaseland on 2/2/17.
@@ -25,7 +33,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
     private TextView TitleTextView;
     private ImageView PosterImageView;
+    private RecyclerView ReviewRecyclerView;
 
+    private ReviewRecyclerAdapter ReviewRecycleAdapter;
 
     public static PosterDetailFragment newInstance(String id){
         Bundle args = new Bundle();
@@ -38,7 +48,17 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
-        getActivity().supportStartPostponedEnterTransition();;
+    }
+
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        this.ReviewRecycleAdapter = new ReviewRecyclerAdapter(new ArrayList<Review>(0), getContext(), new ReviewItemListener() {
+            @Override
+            public void onClick(Review review) {
+                //todo: implement open review details method in presenter
+            }
+        });
     }
 
     @Nullable
@@ -47,6 +67,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
         View root = inflater.inflate(R.layout.fragment_poster_detail, container, false);
         TitleTextView = (TextView)root.findViewById(R.id.poster_detail_title);
         PosterImageView = (ImageView) root.findViewById(R.id.poster_detail_image);
+        ReviewRecyclerView = (RecyclerView)root.findViewById(R.id.review_list);
+        ReviewRecyclerView.setAdapter(ReviewRecycleAdapter);
+        ReviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         return root;
     }
@@ -75,9 +98,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
 
     @Override
-    public void showTitle(String title) {
+    public void showPosterDetails(Poster posterDetails) {
         TitleTextView.setVisibility(View.VISIBLE);
-        TitleTextView.setText(title);
+        TitleTextView.setText(posterDetails.getTitle());
 
     }
 
@@ -88,7 +111,10 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
 
     @Override
-    public void showReviews() {
+    public void showReviews(List<Review> reviews) {
+
+        ReviewRecycleAdapter.replacePosters(reviews);
+
 
     }
 
@@ -105,5 +131,63 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void setPresenter(PosterDetailContract.Presenter presenter) {
         this.Presenter = presenter;
+    }
+
+    public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewHolder> {
+
+        private List<Review> reviews;
+        private ReviewItemListener listener;
+
+        private Context context;
+        public ReviewRecyclerAdapter(List<Review> reviews, Context context, ReviewItemListener listener) {
+            this.reviews = reviews;
+            this.context = context;
+            this.listener = listener;
+        }
+
+        @Override
+        public ReviewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View view = inflater.inflate(R.layout.review_item, parent, false);
+            ReviewHolder reviewHolder = new ReviewHolder(view,  listener);
+            return reviewHolder;
+        }
+
+        @Override
+        public void onBindViewHolder(ReviewHolder holder, int position) {
+
+            holder.setReviewInfo(reviews.get(position));
+        }
+
+        public void replacePosters(List<Review> reviews) {
+            this.reviews = reviews;
+            notifyDataSetChanged();
+        }
+
+        @Override
+        public int getItemCount() {
+            return reviews.size();
+        }
+    }
+
+    public class ReviewHolder extends RecyclerView.ViewHolder {
+
+        private ReviewItemListener reviewItemListener;
+        private View itemView;
+        public ReviewHolder(View itemView, ReviewItemListener listener) {
+            super(itemView);
+            this.itemView = itemView;
+            this.reviewItemListener = listener;
+
+        }
+
+        public void setReviewInfo(final Review review) {
+            TextView textView = (TextView) itemView.findViewById(R.id.review_author);
+            textView.setText(review.getAuthor());
+        }
+    }
+
+    public interface ReviewItemListener{
+        void onClick(Review review);
     }
 }

@@ -14,6 +14,8 @@ import java.util.List;
 
 public interface PosterSource {
 
+    void refreshTrailers();
+
     interface LoadPostersCallback {
 
         void onPostersLoaded(List<Poster> posters);
@@ -48,6 +50,10 @@ public interface PosterSource {
     void deleteAllPosters();
 
     void deletePoster(String posterId);
+
+    void getReviews(@NonNull LoadReviewsCallback callback, String posterId);
+
+    void refreshReviews();
 
 
 }

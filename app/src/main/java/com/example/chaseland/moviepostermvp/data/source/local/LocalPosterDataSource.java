@@ -38,6 +38,12 @@ public class LocalPosterDataSource implements PosterSource {
 
 
     }
+
+    @Override
+    public void refreshTrailers() {
+
+    }
+
     @Override
     public void getPosters(@NonNull LoadPostersCallback callback, PosterFilterType filtering) {
 
@@ -87,6 +93,16 @@ public class LocalPosterDataSource implements PosterSource {
 
     @Override
     public void deletePoster(String posterId) {
+
+    }
+
+    @Override
+    public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
+
+    }
+
+    @Override
+    public void refreshReviews() {
 
     }
 

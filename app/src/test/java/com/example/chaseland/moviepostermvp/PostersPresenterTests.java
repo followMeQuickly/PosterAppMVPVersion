@@ -52,7 +52,6 @@ public class PostersPresenterTests {
     @Test
     public void TestLoadPosters() {
         postersPresenter.loadPosters(true);
-
         verify(posterRepository).getPosters(loadPostersCallbackArgumentCaptor.capture(), PosterFilterType.POPULAR);
     }
 
@@ -62,6 +61,21 @@ public class PostersPresenterTests {
         postersPresenter.OpenPosterDetails(testPoster);
 
         verify(posterView).showPosterDetailsUI(testPoster.getId());
+    }
+
+    @Test
+    public void TestShowPosterDetails() {
+        Poster testPoster = POSTERS.get(0);
+        postersPresenter.OpenPosterDetails(testPoster);
+
+        verify(posterView).showPosterDetailsUI(testPoster.getId());
+    }
+
+    @Test
+    public void TestChangeFilterType(){
+        postersPresenter.changeFilterType(PosterFilterType.HIGHEST_RATED);
+        postersPresenter.loadPosters(true);
+
     }
 
 

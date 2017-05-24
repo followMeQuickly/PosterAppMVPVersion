@@ -30,12 +30,9 @@ import java.util.List;
 
 public class PostersFragment extends Fragment implements PostersContract.PosterView {
 
-
     private PostersContract.Presenter Presenter;
 
     private PosterRecyclerAdapter PosterRecyclerAdapter;
-
-    private View clickedView = null;
 
     PosterItemListener PosterItemListener = new PosterItemListener() {
         @Override
@@ -44,7 +41,8 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
         }
     };
 
-     public static PostersFragment newInstance() {
+
+    public static PostersFragment newInstance() {
 
     Bundle args = new Bundle();
     PostersFragment fragment = new PostersFragment();
@@ -62,9 +60,8 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_posters, container, false);
-
-
         RecyclerView recyclerView = (RecyclerView) root.findViewById(R.id.gridview);
+
         recyclerView.setHasFixedSize(true);
 
         int tilePadding = 8;
@@ -126,11 +123,6 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
         Intent intent = new Intent(getContext(), PosterDetailActivity.class);
         intent.putExtra(PosterDetailActivity.TASK_DETAIL_ID, posterId);
         startActivity(intent);
-
-            // Call some material design APIs here
-
-
-
     }
 
     @Override
@@ -206,7 +198,6 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
         public PosterHolder(View itemView, PosterItemListener posterItemListener) {
             super(itemView);
             this.itemView = itemView;
-
             this.posterItemListener = posterItemListener;
         }
 
@@ -215,22 +206,14 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
             ImageView imageView = (ImageView) itemView.findViewById(R.id.poster_image);
             Picasso.with(itemView.getContext()).load(poster.getImagePath()).into(imageView);
 
-            clickedView = imageView;
-            // todo: add favorite logic here
-
-            //todo: add favorite double tap event here.
 
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
                     posterItemListener.onClick(poster);
-                    clickedView = v;
                 }
 
             });
-
-
-            //itemView.onT
 
         }
     }

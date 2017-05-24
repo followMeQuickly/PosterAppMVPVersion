@@ -28,6 +28,12 @@ public class FakePosterRemoteDataSource implements PosterSource {
     private FakePosterRemoteDataSource() {
 
     }
+
+    @Override
+    public void refreshTrailers() {
+
+    }
+
     @Override
     public void getPosters(@NonNull LoadPostersCallback callback, PosterFilterType filtering) {
 
@@ -55,6 +61,16 @@ public class FakePosterRemoteDataSource implements PosterSource {
 
     @Override
     public void deletePoster(String posterId) {
+
+    }
+
+    @Override
+    public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
+
+    }
+
+    @Override
+    public void refreshReviews() {
 
     }
 

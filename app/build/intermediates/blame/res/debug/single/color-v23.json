@@ -36,6 +36,10 @@
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color-v23/abc_color_highlight_material.xml"
     },
     {
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/color-v23/abc_btn_colored_text_material.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/color-v23/abc_btn_colored_text_material.xml"
+    },
+    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/color-v23/abc_tint_switch_thumb.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/color-v23/abc_tint_switch_thumb.xml"
     }

@@ -72,6 +72,7 @@ MERGED from [com.android.support:support-vector-drawable:25.0.0] /Users/chaselan
 MERGED from [com.android.support:animated-vector-drawable:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:20:5-44
 MERGED from [com.android.support:recyclerview-v7:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex:rxandroid:1.2.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.0/AndroidManifest.xml:19:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion

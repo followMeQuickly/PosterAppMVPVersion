@@ -4,44 +4,44 @@
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_media_action.xml"
     },
     {
-        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
-        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/layout/design_navigation_item_header.xml"
-    },
-    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_item_layout.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_popup_menu_item_layout.xml"
     },
     {
-        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/poster_item.xml",
-        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/layout/poster_item.xml"
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/design_navigation_item_header.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/layout/design_navigation_item_header.xml"
     },
     {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_screen_simple_overlay_action_mode.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_screen_simple_overlay_action_mode.xml"
     },
     {
-        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
-        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_checkbox.xml"
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/poster_item.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/layout/poster_item.xml"
     },
     {
-        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
-        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_dialog_title_material.xml"
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_list_menu_item_checkbox.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_list_menu_item_checkbox.xml"
     },
     {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_action_mode_close_item_material.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_action_mode_close_item_material.xml"
     },
     {
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_dialog_title_material.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_dialog_title_material.xml"
+    },
+    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_material.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_alert_dialog_material.xml"
     },
     {
-        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
-        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_custom.xml"
-    },
-    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/notification_template_lines.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.4.0/res/layout/notification_template_lines.xml"
+    },
+    {
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_custom.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/notification_template_big_media_custom.xml"
     },
     {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_popup_menu_header_item_layout.xml",
@@ -124,6 +124,10 @@
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/layout/design_layout_tab_icon.xml"
     },
     {
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/review_item.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/layout/review_item.xml"
+    },
+    {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/design_navigation_item_separator.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/res/layout/design_navigation_item_separator.xml"
     },
@@ -150,6 +154,10 @@
     {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view_list_item.xml",
         "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/res/layout/abc_activity_chooser_view_list_item.xml"
+    },
+    {
+        "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/abc_alert_dialog_title_material.xml",
+        "source": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.3.0/res/layout/abc_alert_dialog_title_material.xml"
     },
     {
         "merged": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/res/merged/debug/layout/notification_template_big_media_narrow.xml",
