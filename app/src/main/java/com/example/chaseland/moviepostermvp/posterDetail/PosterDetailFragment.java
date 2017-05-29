@@ -6,6 +6,7 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -149,9 +150,18 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerHolder> {
 
         private List<Trailer> trailers;
-        public TrailerRecyclerAdapter(List<Trailer> trailer, Context context, )
+        private Context context;
+        private TrailerItemListener listener;
+        public TrailerRecyclerAdapter(List<Trailer> trailer, Context context, TrailerItemListener listener){
+            this.trailers = trailer;
+            this.context = context;
+            this.listener = listener;
+
+        }
         @Override
         public TrailerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            LayoutInflater inflater = LayoutInflater.from(context);
+            View view = inflater.inflate()
         }
 
         @Override
