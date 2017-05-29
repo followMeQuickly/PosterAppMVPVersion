@@ -4,6 +4,7 @@ import com.example.chaseland.moviepostermvp.BasePresenter;
 import com.example.chaseland.moviepostermvp.BaseView;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
 
 import java.util.List;
 
@@ -32,7 +33,9 @@ public interface PosterDetailContract {
 
         void hideReviews();
 
-        void launchTrailers();
+        void showTrailers(List<Trailer> trailers);
+
+
 
     }
     interface Presenter extends BasePresenter{

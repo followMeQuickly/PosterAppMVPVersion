@@ -715,7 +715,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>useLogo</code></td><td>0x1</td><td></td></tr>
 <tr><td><code>showHome</code></td><td>0x2</td><td></td></tr>
 <tr><td><code>homeAsUp</code></td><td>0x4</td><td></td></tr>
-<tr><td><code>showPosterDetails</code></td><td>0x8</td><td></td></tr>
+<tr><td><code>showTitle</code></td><td>0x8</td><td></td></tr>
 <tr><td><code>showCustom</code></td><td>0x10</td><td></td></tr>
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>
@@ -3521,7 +3521,7 @@ or to a theme attribute in the form "<code>?[<i>package</i>:][<i>type</i>:]<i>na
 <tr><td><code>useLogo</code></td><td>0x1</td><td></td></tr>
 <tr><td><code>showHome</code></td><td>0x2</td><td></td></tr>
 <tr><td><code>homeAsUp</code></td><td>0x4</td><td></td></tr>
-<tr><td><code>showPosterDetails</code></td><td>0x8</td><td></td></tr>
+<tr><td><code>showTitle</code></td><td>0x8</td><td></td></tr>
 <tr><td><code>showCustom</code></td><td>0x10</td><td></td></tr>
 <tr><td><code>disableHome</code></td><td>0x20</td><td></td></tr>
 </table>

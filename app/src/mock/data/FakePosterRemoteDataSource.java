@@ -5,7 +5,10 @@ import android.support.annotation.VisibleForTesting;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
+
+import rx.Observable;
 
 /**
  * Created by chaseland on 2/8/17.
@@ -67,6 +70,11 @@ public class FakePosterRemoteDataSource implements PosterSource {
     @Override
     public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
 
+    }
+
+    @Override
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+        return null;
     }
 
     @Override

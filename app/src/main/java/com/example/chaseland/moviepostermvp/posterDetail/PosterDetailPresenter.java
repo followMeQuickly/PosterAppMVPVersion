@@ -1,12 +1,21 @@
 package com.example.chaseland.moviepostermvp.posterDetail;
 
+import android.util.Log;
+
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
 import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by chaseland on 1/31/17.
@@ -82,7 +91,27 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
     }
     private void loadTrailers(boolean forceUpdate, boolean showLoadingUi) {
-        posterRepository.refreshTrailers();
+        posterRepository.getTrailer(posterId)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Trailer>() {
+                    @Override
+                    public void onCompleted() {
+
+                    }
+
+                    @Override
+                    public void onError(Throwable e) {
+                        Log.d(TAG, "onError: " + e.getMessage());
+
+                    }
+
+                    @Override
+                    public void onNext(Trailer trailer) {
+                        Log.d(TAG, "onNext: " + trailer.getYoutube());
+
+                    }
+                });
     }
 
     @Override

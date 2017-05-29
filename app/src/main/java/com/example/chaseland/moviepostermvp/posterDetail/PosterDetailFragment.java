@@ -15,6 +15,7 @@ import android.widget.TextView;
 import com.example.chaseland.moviepostermvp.R;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -34,6 +35,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     private TextView TitleTextView;
     private ImageView PosterImageView;
     private RecyclerView ReviewRecyclerView;
+    private RecyclerView TrailerRecyclerView;
 
     private ReviewRecyclerAdapter ReviewRecycleAdapter;
 
@@ -119,12 +121,17 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
 
     @Override
+    public void showTrailerImage() {
+
+    }
+
+    @Override
     public void hideReviews() {
 
     }
 
     @Override
-    public void launchTrailers() {
+    public void showTrailers(List<Trailer> trailers) {
 
     }
 
@@ -132,7 +139,31 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     public void setPresenter(PosterDetailContract.Presenter presenter) {
         this.Presenter = presenter;
     }
+    public class TrailerHolder extends RecyclerView.ViewHolder{
 
+        public TrailerHolder(View itemView) {
+            super(itemView);
+        }
+    }
+
+    public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerHolder> {
+
+        private List<Trailer> trailers;
+        public TrailerRecyclerAdapter(List<Trailer> trailer, Context context, )
+        @Override
+        public TrailerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+        }
+
+        @Override
+        public void onBindViewHolder(TrailerHolder holder, int position) {
+
+        }
+
+        @Override
+        public int getItemCount() {
+            return 0;
+        }
+    }
     public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewHolder> {
 
         private List<Review> reviews;
@@ -189,5 +220,8 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
     public interface ReviewItemListener{
         void onClick(Review review);
+    }
+    public interface TrailerItemListener{
+        void onClick(Trailer trailer);
     }
 }

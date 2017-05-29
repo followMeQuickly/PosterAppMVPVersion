@@ -8,11 +8,14 @@ import android.support.annotation.NonNull;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
 import com.example.chaseland.moviepostermvp.data.source.local.PosterPersistenceContract.PosterEntry;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import rx.Observable;
 
 /**
  * Created by chaseland on 12/28/16.
@@ -99,6 +102,11 @@ public class LocalPosterDataSource implements PosterSource {
     @Override
     public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
 
+    }
+
+    @Override
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+        return null;
     }
 
     @Override

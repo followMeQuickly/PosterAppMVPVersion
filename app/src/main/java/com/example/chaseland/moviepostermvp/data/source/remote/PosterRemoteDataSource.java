@@ -6,6 +6,8 @@ import android.support.annotation.NonNull;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
+import com.example.chaseland.moviepostermvp.data.source.Trailer;
+import com.example.chaseland.moviepostermvp.data.source.TrailerService;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 import com.squareup.okhttp.HttpUrl;
 import com.squareup.okhttp.OkHttpClient;
@@ -23,6 +25,11 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.concurrent.ExecutionException;
+
+import retrofit2.Retrofit;
+import retrofit2.adapter.rxjava.RxJavaCallAdapterFactory;
+import retrofit2.converter.gson.GsonConverterFactory;
+import rx.Observable;
 
 /**
  * Created by chaseland on 1/1/17.
@@ -42,7 +49,9 @@ public class PosterRemoteDataSource implements PosterSource {
         POSTER_SERVICE_DATA = new LinkedHashMap<>();
     }
     public boolean beenCalled = false;
-    
+    private final Retrofit retrofit;
+    private String api_key = "91c43b8e8e40b5eefb9be99aaad68cd4";;
+
     private void LoadPosterData(@NonNull LoadPostersCallback callback, final PosterFilterType filtering) {
         List<Poster> posters = new ArrayList<>();
         AsyncTask<Void, Void, List<Poster>> posterTask = new AsyncTask<Void, Void, List<Poster>>() {
@@ -68,7 +77,8 @@ public class PosterRemoteDataSource implements PosterSource {
                         urlBuilder.addPathSegment("popular");
                 }
 
-                urlBuilder.addQueryParameter("api_key", "91c43b8e8e40b5eefb9be99aaad68cd4");
+
+                urlBuilder.addQueryParameter("api_key", api_key);
                 url = urlBuilder.build().toString();
                 Request posterRequest = new Request.Builder().url(url).build();
 
@@ -121,7 +131,14 @@ public class PosterRemoteDataSource implements PosterSource {
         }
         return INSTANCE;
     }
-    private PosterRemoteDataSource(){}
+    private PosterRemoteDataSource(){
+        retrofit = new Retrofit.Builder()
+                .addCallAdapterFactory(RxJavaCallAdapterFactory.create())
+                .addConverterFactory(GsonConverterFactory.create())
+                .baseUrl("https://api.themoviedb.org/")
+                .build();
+
+    }
 
 
     @Override
@@ -220,6 +237,14 @@ public class PosterRemoteDataSource implements PosterSource {
         }
         callback.onReviewsLoaded(reviews);
         beenCalled = true;
+    }
+
+    @Override
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+
+        TrailerService trailerService = retrofit.create(TrailerService.class);
+        return trailerService.getTrailerData(posterId,api_key);
+
     }
 
     @Override

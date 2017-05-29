@@ -8,6 +8,8 @@ import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 
 import java.util.List;
 
+import rx.Observable;
+
 /**
  * Created by chaseland on 12/28/16.
  */
@@ -52,6 +54,8 @@ public interface PosterSource {
     void deletePoster(String posterId);
 
     void getReviews(@NonNull LoadReviewsCallback callback, String posterId);
+
+    Observable<Trailer> getTrailer(@NonNull String posterId);
 
     void refreshReviews();
 

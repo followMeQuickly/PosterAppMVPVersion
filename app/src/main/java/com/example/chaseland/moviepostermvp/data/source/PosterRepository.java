@@ -10,6 +10,8 @@ import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
+import rx.Observable;
+
 /**
  * Created by chaseland on 12/28/16.
  */
@@ -146,6 +148,11 @@ public class PosterRepository implements PosterSource {
     public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
         remoteRepo.getReviews(callback, posterId);
 
+    }
+
+    @Override
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+        return remoteRepo.getTrailer(posterId);
     }
 
     @Override
