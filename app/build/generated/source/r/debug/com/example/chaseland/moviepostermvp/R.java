@@ -2858,6 +2858,7 @@ containing a value of this type.
         public static final int select_dialog_multichoice_material=0x7f04003f;
         public static final int select_dialog_singlechoice_material=0x7f040040;
         public static final int support_simple_spinner_dropdown_item=0x7f040041;
+        public static final int trailer_item=0x7f040042;
     }
     public static final class menu {
         public static final int drawer_actions=0x7f0e0000;

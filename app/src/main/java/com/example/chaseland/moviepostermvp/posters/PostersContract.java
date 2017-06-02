@@ -38,6 +38,8 @@ public interface PostersContract {
 
         void loadPosters(boolean forceUpdate);
 
+
+
         void favoritePoster(Poster favoritedPoster);
 
         void changeFilterType(PosterFilterType filterType);

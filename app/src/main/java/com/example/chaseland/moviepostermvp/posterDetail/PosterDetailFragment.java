@@ -6,7 +6,6 @@ import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +15,7 @@ import android.widget.TextView;
 import com.example.chaseland.moviepostermvp.R;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
-import com.example.chaseland.moviepostermvp.data.source.Trailer;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.squareup.picasso.Picasso;
 
 import java.util.ArrayList;
@@ -89,10 +88,6 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void showPosterImage(String imageUrl) {
         //todo: create interface to abstract away loading images
-        Picasso.with(getActivity())
-                .load(imageUrl)
-                .fit()
-                .into(PosterImageView);
     }
 
     @Override
@@ -122,7 +117,12 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
 
     @Override
-    public void showTrailerImage() {
+    public void showTrailerImage(String imageUrl) {
+
+        Picasso.with(getActivity())
+                .load(imageUrl)
+                .fit()
+                .into(PosterImageView);
 
     }
 
@@ -161,8 +161,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
         @Override
         public TrailerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            View view = inflater.inflate()
+            return null;
         }
+
 
         @Override
         public void onBindViewHolder(TrailerHolder holder, int position) {

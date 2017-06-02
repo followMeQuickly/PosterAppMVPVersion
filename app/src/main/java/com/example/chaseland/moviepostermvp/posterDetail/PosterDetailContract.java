@@ -4,7 +4,7 @@ import com.example.chaseland.moviepostermvp.BasePresenter;
 import com.example.chaseland.moviepostermvp.BaseView;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
-import com.example.chaseland.moviepostermvp.data.source.Trailer;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 
 import java.util.List;
 
@@ -27,7 +27,7 @@ public interface PosterDetailContract {
         void showReviews(List<Review> review);
 
 
-        void showTrailerImage();
+        void showTrailerImage(String imageUrl);
 
 
 

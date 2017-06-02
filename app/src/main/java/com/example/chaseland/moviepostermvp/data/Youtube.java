@@ -1,4 +1,4 @@
-package com.example.chaseland.moviepostermvp.data.source;
+package com.example.chaseland.moviepostermvp.data;
 
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;

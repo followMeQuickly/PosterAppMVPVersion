@@ -42,9 +42,7 @@ public class PostersPresenterTests {
     public void SetupPostersPresenter() {
         MockitoAnnotations.initMocks(this);
 
-        Poster poster = new Poster("id 1", "Title1", "description 1", false, 0, "date", "imagePath");
         POSTERS = new ArrayList<Poster>();
-        POSTERS.add(poster);
 
         postersPresenter = new PostersPresenter(posterRepository, posterView);
     }
@@ -60,7 +58,6 @@ public class PostersPresenterTests {
         Poster testPoster = POSTERS.get(0);
         postersPresenter.OpenPosterDetails(testPoster);
 
-        verify(posterView).showPosterDetailsUI(testPoster.getId());
     }
 
     @Test
@@ -68,7 +65,7 @@ public class PostersPresenterTests {
         Poster testPoster = POSTERS.get(0);
         postersPresenter.OpenPosterDetails(testPoster);
 
-        verify(posterView).showPosterDetailsUI(testPoster.getId());
+
     }
 
     @Test

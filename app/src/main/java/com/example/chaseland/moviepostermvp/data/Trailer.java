@@ -1,4 +1,4 @@
-package com.example.chaseland.moviepostermvp.data.source;
+package com.example.chaseland.moviepostermvp.data;
 
 /**
  * Created by chaseland on 5/27/17.

@@ -3,14 +3,17 @@ package com.example.chaseland.moviepostermvp.data.source;
 import android.support.annotation.NonNull;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Posters;
+import com.example.chaseland.moviepostermvp.data.Reviews;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
 import rx.Observable;
+import rx.functions.Action1;
 
 /**
  * Created by chaseland on 12/28/16.
@@ -79,7 +82,6 @@ public class PosterRepository implements PosterSource {
         remoteRepo.getPosters(new LoadPostersCallback() {
             @Override
             public void onPostersLoaded(List<Poster> posters) {
-                refreshCache(posters);
                 refreshLocalDataSource(posters);
                 callback.onPostersLoaded(new ArrayList<Poster>(posters));
             }
@@ -101,19 +103,7 @@ public class PosterRepository implements PosterSource {
 
         }
     }
-
-    private void refreshCache(List<Poster> posters) {
-
-        if(cachedPosters == null){
-            cachedPosters = new LinkedHashMap<>();
-        }
-        cachedPosters.clear();
-        for (Poster poster: posters) {
-            cachedPosters.put(poster.getId(), poster);
-
-        }
-        isCacheDirty = false;
-    }
+//todo: figure out cacheing techniques later
 
     @Override
     public void getPoster(@NonNull String posterId, @NonNull GetPosterCallback callback) {
@@ -145,14 +135,29 @@ public class PosterRepository implements PosterSource {
     }
 
     @Override
-    public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
-        remoteRepo.getReviews(callback, posterId);
-
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+        return remoteRepo.getTrailer(posterId);
     }
 
     @Override
-    public Observable<Trailer> getTrailer(@NonNull String posterId) {
-        return remoteRepo.getTrailer(posterId);
+    public Observable<Posters> getPosters(PosterFilterType filtering) {
+        Observable<Posters> postersObservable = remoteRepo.getPosters(filtering);
+        postersObservable.doOnNext(new Action1<Posters>() {
+            @Override
+            public void call(Posters posters) {
+                for (Poster poster: posters.getResults()) {
+
+                    localRepo.savePoster(poster);
+                }
+            }
+        });
+
+        return postersObservable;
+    }
+
+    @Override
+    public Observable<Reviews> getReviews(String posterId) {
+        return remoteRepo.getReviews(posterId);
     }
 
     @Override

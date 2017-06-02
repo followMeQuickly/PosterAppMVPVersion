@@ -7,8 +7,10 @@ import android.database.sqlite.SQLiteDatabase;
 import android.support.annotation.NonNull;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Posters;
+import com.example.chaseland.moviepostermvp.data.Reviews;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
-import com.example.chaseland.moviepostermvp.data.source.Trailer;
 import com.example.chaseland.moviepostermvp.data.source.local.PosterPersistenceContract.PosterEntry;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 
@@ -75,8 +77,6 @@ public class LocalPosterDataSource implements PosterSource {
                 String imagePath = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.IMAGE_PATH_COLUMN));
                 int favoriteRep = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.FAVORITE_COLUMN));
                 boolean isFavorited = (favoriteRep == 0);
-                Poster poster = new Poster(posterId, title, description, isFavorited, vote, releaseDate, imagePath);
-                posters.add(poster);
 
 
             }
@@ -100,12 +100,17 @@ public class LocalPosterDataSource implements PosterSource {
     }
 
     @Override
-    public void getReviews(@NonNull LoadReviewsCallback callback, String posterId) {
-
+    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+        return null;
     }
 
     @Override
-    public Observable<Trailer> getTrailer(@NonNull String posterId) {
+    public Observable<Posters> getPosters(PosterFilterType filtering) {
+        return null;
+    }
+
+    @Override
+    public Observable<Reviews> getReviews(String posterId) {
         return null;
     }
 
@@ -144,7 +149,12 @@ public class LocalPosterDataSource implements PosterSource {
             String imagePath = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.IMAGE_PATH_COLUMN));
             //int favoriteRep = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.FAVORITE_COLUMN));
             //boolean isFavorited = (favoriteRep == 0) ? true : false;
-            poster = new Poster(posterId, title, description, false, vote, releaseDate, imagePath);
+            poster = new Poster();
+            poster.setPosterPath(imagePath);
+            poster.setTitle(title);
+            poster.setVoteCount(vote);
+            poster.setReleaseDate(releaseDate);
+            poster.setOverview(description);
 
         }
         if(posterCursor != null){
@@ -166,9 +176,8 @@ public class LocalPosterDataSource implements PosterSource {
 
         ContentValues values = new ContentValues();
         values.put(PosterEntry.TITLE_COLUMN, poster.getTitle());
-        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getDescription());
+        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getPosterPath());
         values.put(PosterEntry.ID_COLUMN, poster.getId());
-        values.put(PosterEntry.IMAGE_PATH_COLUMN, poster.getImagePath());
         values.put(PosterEntry.VOTE_COLUMN, poster.getVoteCount());
         values.put(PosterEntry.RELEASE_DATE_COLUMN, poster.getReleaseDate());
 

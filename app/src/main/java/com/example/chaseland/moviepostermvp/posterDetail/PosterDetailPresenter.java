@@ -4,11 +4,11 @@ import android.util.Log;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
+import com.example.chaseland.moviepostermvp.data.Reviews;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
-import com.example.chaseland.moviepostermvp.data.source.Trailer;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observer;
@@ -28,6 +28,8 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
     private final PosterDetailContract.PosterDetailView posterDetailView;
 
     private String posterId;
+
+    private Poster poster;
 
     private boolean firstLoad = true;
 
@@ -59,24 +61,27 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
         // todo: add in check if the loading ui should be shown.
         //todo: add in check for if a forced update is needed
-        posterRepository.getReviews(new PosterSource.LoadReviewsCallback() {
-            @Override
-            public void onReviewsLoaded(List<Review> reviews) {
-                List<Review> reviewsToShow = new ArrayList<Review>();
-                for(int i =0; i <  reviews.size(); i++) {
-                    Review review = reviews.get(i);
-                    reviewsToShow.add(review);
-                }
-                processReviews(reviewsToShow);
+        posterRepository.getReviews(posterId)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Reviews>() {
+                    @Override
+                    public void onCompleted() {
 
-            }
+                    }
 
-            @Override
-            public void onDataNotAvailable() {
+                    @Override
+                    public void onError(Throwable e) {
 
-            }
+                    }
 
-        }, posterId);
+                    @Override
+                    public void onNext(Reviews reviews) {
+                        Log.d(TAG, "onNext: " + reviews.getReviews());
+                        processReviews(reviews.getReviews());
+
+                    }
+                });
 
     }
 
@@ -109,6 +114,9 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
                     @Override
                     public void onNext(Trailer trailer) {
                         Log.d(TAG, "onNext: " + trailer.getYoutube());
+                        String imageUrl = "https://img.youtube.com/vi/" + trailer.getYoutube().get(1).getSource() + "/0.jpg";
+                        //posterDetailView.showTrailerImage(imageUrl);
+
 
                     }
                 });
@@ -124,10 +132,12 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
     private void showPoster() {
 
+        final Poster[] x = {null};
         posterRepository.getPoster(posterId, new PosterSource.GetPosterCallback() {
             @Override
             public void onPosterLoaded(Poster poster) {
                 if (poster != null) {
+                    x[0] = poster;
                     displayPoster(poster);
                 }
             }
@@ -137,12 +147,14 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
             }
         });
+        this.poster = x[0];
+        posterDetailView.showTrailerImage(poster.getBackdropPath());
     }
 
     private void displayPoster(Poster poster) {
 
         posterDetailView.showPosterDetails(poster);
-        posterDetailView.showPosterImage(poster.getImagePath());
+        posterDetailView.showPosterImage(poster.getPosterPath());
         //todo: add rest of shows here
     }
 }

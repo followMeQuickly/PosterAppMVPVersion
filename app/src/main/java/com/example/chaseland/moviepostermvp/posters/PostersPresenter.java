@@ -1,11 +1,18 @@
 package com.example.chaseland.moviepostermvp.posters;
 
-import com.example.chaseland.moviepostermvp.data.Poster;
-import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
-import com.example.chaseland.moviepostermvp.data.source.PosterSource;
+import android.util.Log;
 
-import java.util.ArrayList;
+import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Posters;
+import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
+
 import java.util.List;
+
+import rx.Observer;
+import rx.android.schedulers.AndroidSchedulers;
+import rx.schedulers.Schedulers;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by chaseland on 1/11/17.
@@ -18,12 +25,7 @@ public class PostersPresenter implements PostersContract.Presenter {
 
     private final PostersContract.PosterView posterView;
 
-
     private PosterFilterType currentFiltering = PosterFilterType.ALL_POSTERS;
-
-
-    private static int x;
-
 
     private boolean mFirstLoad = true;
 
@@ -51,39 +53,29 @@ public class PostersPresenter implements PostersContract.Presenter {
         if(showLoadingUi){
             posterView.setLoadingIndicator(true);
         }
-        if(forceUpdate){
-            posterRepository.refreshPosters();
-        }
 
-        // todo: when implementing espresso tests, be sure to add wait here for network response
-        posterRepository.getPosters(new PosterSource.LoadPostersCallback() {
-            @Override
-            public void onPostersLoaded(List<Poster> posters) {
+        posterRepository.getPosters(currentFiltering)
+                .subscribeOn(Schedulers.newThread())
+                .observeOn(AndroidSchedulers.mainThread())
+                .subscribe(new Observer<Posters>() {
+                    @Override
+                    public void onCompleted() {
 
-                List<Poster> postersToShow = new ArrayList<Poster>();
-
-                // do not use foreach loops because chet haase says so
-                for(int i = 0; i < posters.size(); i++){
-                    Poster poster = posters.get(i);
-                    switch (currentFiltering){
-                        case ALL_POSTERS:
-                            postersToShow.add(poster);
-                            break;
-                        default:
-                            // log weird error
-                            postersToShow.add(poster);
-                            break;
                     }
 
-                }
-                processPosters(postersToShow);
-            }
+                    @Override
+                    public void onError(Throwable e) {
 
-            @Override
-            public void onDataNotAvailable() {
+                        Log.d(TAG, "onError:" +
+                                e.getMessage());
+                    }
 
-            }
-        }, currentFiltering);
+                    @Override
+                    public void onNext(Posters poster) {
+                        Log.d(TAG, "onNext: " + poster.getResults());
+                        processPosters(poster.getResults());
+                    }
+                });
     }
 
     private void processPosters(List<Poster> postersToShow) {
@@ -107,7 +99,7 @@ public class PostersPresenter implements PostersContract.Presenter {
     }
 
     public void OpenPosterDetails(Poster requestedPoster) {
-        posterView.showPosterDetailsUI(requestedPoster.getId());
+        posterView.showPosterDetailsUI(String.valueOf(requestedPoster.getId()));
 
     }
 }

@@ -3,7 +3,10 @@ package com.example.chaseland.moviepostermvp.data.source;
 import android.support.annotation.NonNull;
 
 import com.example.chaseland.moviepostermvp.data.Poster;
+import com.example.chaseland.moviepostermvp.data.Posters;
 import com.example.chaseland.moviepostermvp.data.Review;
+import com.example.chaseland.moviepostermvp.data.Reviews;
+import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.example.chaseland.moviepostermvp.posters.PosterFilterType;
 
 import java.util.List;
@@ -53,9 +56,11 @@ public interface PosterSource {
 
     void deletePoster(String posterId);
 
-    void getReviews(@NonNull LoadReviewsCallback callback, String posterId);
-
     Observable<Trailer> getTrailer(@NonNull String posterId);
+
+    Observable<Posters> getPosters(PosterFilterType filtering);
+
+    Observable<Reviews> getReviews(String posterId);
 
     void refreshReviews();
 

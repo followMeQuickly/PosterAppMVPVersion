@@ -204,7 +204,7 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
         public void setPosterInfo(final Poster poster) {
 
             ImageView imageView = (ImageView) itemView.findViewById(R.id.poster_image);
-            Picasso.with(itemView.getContext()).load(poster.getImagePath()).into(imageView);
+            Picasso.with(itemView.getContext()).load("http://image.tmdb.org/t/p/w154//" + poster.getPosterPath()).into(imageView);
 
 
             itemView.setOnClickListener(new View.OnClickListener() {
