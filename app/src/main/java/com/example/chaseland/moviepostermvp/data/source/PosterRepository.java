@@ -13,7 +13,6 @@ import java.util.List;
 import java.util.Map;
 
 import rx.Observable;
-import rx.functions.Action1;
 
 /**
  * Created by chaseland on 12/28/16.
@@ -97,7 +96,6 @@ public class PosterRepository implements PosterSource {
     private void refreshLocalDataSource(List<Poster> posters){
 
         localRepo.deleteAllPosters();
-        //todo: add filter type to database and update.
         for (Poster poster: posters) {
             localRepo.savePoster(poster);
 
@@ -113,6 +111,7 @@ public class PosterRepository implements PosterSource {
 
     @Override
     public void savePoster(@NonNull Poster poster) {
+        localRepo.savePoster(poster);
 
     }
 
@@ -142,16 +141,6 @@ public class PosterRepository implements PosterSource {
     @Override
     public Observable<Posters> getPosters(PosterFilterType filtering) {
         Observable<Posters> postersObservable = remoteRepo.getPosters(filtering);
-        postersObservable.doOnNext(new Action1<Posters>() {
-            @Override
-            public void call(Posters posters) {
-                for (Poster poster: posters.getResults()) {
-
-                    localRepo.savePoster(poster);
-                }
-            }
-        });
-
         return postersObservable;
     }
 

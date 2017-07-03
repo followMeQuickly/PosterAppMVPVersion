@@ -3,39 +3,39 @@
 
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/9276db41af1f36c37be7b4aa93de6f04a0cb30ba/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-vector-drawable-25.0.0_61453fcb5bd882cd78d6fe899cd1d9e0316250c9.jar" />
+        revision="25.0.0"
+        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_e71877d326bbb4e8836ebb4775d7ae2a25db67f0.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="26674000177e45447a0326a6ad84612761199a13">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-ui-25.0.0_492acb4d962983655e5f0277e40d6f01231d240e.jar" />
+        revision="25.0.0"
+        sha1="05ea7af56cc7c567ed9856d99efb30740e9b17ff">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/okio-1.8.0_908262b832be86d892ec0d785572e8331e9f2a01.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/8abb036c76d937e236bd0ad0a3204bd7660df80c/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-appcompat-v7-25.0.0_edb76bcf988cf4e10f6e67594835ecd3a4a450ff.jar" />
+        revision="25.0.0"
+        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_705134eca4232a6225fad487601048ee629e32da.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/retrofit/2.1.0/2de7cd8b95b7021b1d597f049bcb422055119f2c/retrofit-2.1.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_97e7b620316d7e8cb403a1e55e0dd83015921a50.jar" />
+        revision="25.0.0"
+        sha1="2de7cd8b95b7021b1d597f049bcb422055119f2c">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/retrofit-2.1.0_7e1d5a075914867dbb17cc998d8330285170c3d6.jar" />
     </item>
     <item
         is-multidex="false"
@@ -48,6 +48,78 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/defd246cda2f78be0eee48ad720517b346dc84b1/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_a634c9291879eac748622dfd3e63220de87ab74e.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/1bc1f720c6d5ade5e1489edad2fc3eb8c202647c/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_0dcd83464ce95077ec6c899a874799beb03c1b3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/defd246cda2f78be0eee48ad720517b346dc84b1/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_1037a5e49757088a5280a8e3f05ae7110b320f27.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp/okhttp/2.4.0/40340c0748190fe897baf7bffbc1b282734294e5/okhttp-2.4.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="40340c0748190fe897baf7bffbc1b282734294e5">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/okhttp-2.4.0_9922aea173260c96bf669515f206a338cdf32bca.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/adapter-rxjava/2.1.0/693eddc23e87ab13f9cf5001707ce8e7e1d1ff01/adapter-rxjava-2.1.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="693eddc23e87ab13f9cf5001707ce8e7e1d1ff01">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/adapter-rxjava-2.1.0_057856bcca7ed79f97d487699e546b6dedde5a61.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/72c9094d914b08e8020465588bd1e5b739571ec0/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d9ecde39b460470e655de6e47c05573d2d5a8bfb">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_cd0fe82e1f17ea4d755f95d5fc17ad65c64ffd14.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/a1a36c6d899d9ec6780d8574c12111fea978b877/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_7db361cf41cd02ee9051f4a2e971d8d47ab33d68.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/13868370f065878a5352176abc4dd010242ab93e/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="8bc45ce1f63d1a391fd38b32a201be5a42f9c95d">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_fa9b20ab525431331d07048aa3754398e724adac.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
         jumboMode="false"
         optimize="true"
@@ -57,12 +129,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/chaseland/.android/build-cache/3888b6d41be17d485ad84001c24be66bae95d17e/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_107a7c3b08f86275f3495a213a23b97d715fcec9.jar" />
+        revision="25.0.0"
+        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_5fb4f624d1e450a6792efd7e8694d0e17e349095.jar" />
     </item>
     <item
         is-multidex="false"
@@ -75,39 +147,48 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/56be4c40f075c23f42eb0950fdfb8fc37d5ed169/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="75b1f366ff0bbc78f8b1f7cf0dc82e7c53afef6a">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-compat-25.0.0_6f662caae0c4c19a373fb007baccae156739d641.jar" />
+        revision="25.0.0"
+        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_604b65f744bdf73257b5c81f26e14aff7c10b8ff.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/3888b6d41be17d485ad84001c24be66bae95d17e/output/jars/libs/internal_impl-25.0.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="927e8ef5711b115b65b2f35495d77352be2b3c09">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/io.reactivex-rxandroid-1.2.0_536c5951c213ec9105b10277ba85f09aa157937c.jar" />
+        revision="25.0.0"
+        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_e921ff515bac3f2c09715ce9223ec968a54dbf7b.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/io.reactivex/rxjava/1.1.8/f9dbae366a6a3d6b5041c5e8db0dcdfdc35c27b5/rxjava-1.1.8.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="d7c42c80f6509b9ea4db28ca7859ffae08ec5741">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-v4-25.0.0_94383fc1edb9af14e70fc4dba0d6fc5aaf79e295.jar" />
+        revision="25.0.0"
+        sha1="f9dbae366a6a3d6b5041c5e8db0dcdfdc35c27b5">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/rxjava-1.1.8_7e481fe4ddfb93486ad7594432f189d880e1903f.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.retrofit2/converter-gson/2.1.0/aa557d71ead91cbf26e0c316a0f593d168303309/converter-gson-2.1.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="4ccbcda5c72027c7f7c14be9ff8640d9cb0d8da0">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-core-utils-25.0.0_5fd14979a991c69187ba049506831a5a00f79c02.jar" />
+        revision="25.0.0"
+        sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_e678e28d701ea975ce21ad5f71f319e0adfea98d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.picasso/picasso/2.5.2/7446d06ec8d4f7ffcc53f1da37c95f200dcb9387/picasso-2.5.2.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="7446d06ec8d4f7ffcc53f1da37c95f200dcb9387">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/picasso-2.5.2_5ecd5cb8e8f8fd93ab9f7380e244674bd76b57e4.jar" />
     </item>
     <item
         is-multidex="false"
@@ -120,6 +201,24 @@
     </item>
     <item
         is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/407993c53aa51653644b9c8b84b2aeae0fcf548e/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_953b8a9d9e41b697d2e3f829c8cecb09588230eb.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/56be4c40f075c23f42eb0950fdfb8fc37d5ed169/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="665d21a8a069c96b4d9e8b434f5096d865b4e261">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_70f884a406762954148b47bd83b3e538f1ad8f76.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.okio/okio/1.8.0/5ea7af56cc7c567ed9856d99efb30740e9b17ff/okio-1.8.0.jar"
         jumboMode="false"
         optimize="true"
@@ -129,12 +228,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/407993c53aa51653644b9c8b84b2aeae0fcf548e/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-design-25.0.0_82ff8453c1b3c41408dcf02c0c7bc61cbf3ed9ad.jar" />
+        revision="25.0.0"
+        sha1="26674000177e45447a0326a6ad84612761199a13">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_9e285c81bb68b508981aaabf07ed090403b642b1.jar" />
     </item>
     <item
         is-multidex="false"
@@ -147,21 +246,30 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/chaseland/.android/build-cache/16f98078e11c3f54c32cececc15422aacc642e52/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="e5343c9d19cb19ff55f6b268c7f3fe8c9d224f6f">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_7f165913a8381df441a25f434d71c492bfc62525.jar" />
+        revision="25.0.0"
+        sha1="927e8ef5711b115b65b2f35495d77352be2b3c09">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_a12b8f3bfb481a1fc8e413b78c43dc3f192d9910.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.android/build-cache/850f87ec24e13586e04e7800ed9855d8f798b9b0/output/jars/classes.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-transition-25.0.0_b7bf2bff363931c9e0ed7ec2758740a975e463d6.jar" />
+        revision="25.0.0"
+        sha1="26384be22ddc74cfe197ebda9edbc7d1fd8bd537">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_b6d415af02ca2e30ee4def14e3a25ebfab06aff4.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/9276db41af1f36c37be7b4aa93de6f04a0cb30ba/output/jars/libs/internal_impl-25.0.0.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="3b61a70884adaf0be3fc06c70c801e3e6df13133">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_9ddb1604ba41f62299bc0669fa225494a05014b8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -174,21 +282,39 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/Library/Android/sdk/extras/android/m2repository/com/android/support/support-annotations/25.0.0/support-annotations-25.0.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="5e497d60f0cb6ce87c458ac5420a46d0fed49bd0">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-recyclerview-v7-25.0.0_3984368671a58bfe453c13a2d28c34110b4504bf.jar" />
+        revision="25.0.0"
+        sha1="a22d2cc94da87b254451fa8ed28afc30b4653773">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/support-annotations-25.0.0_88378b76e2d7c3ecfe1ebe3a703ac9fcc21a64b6.jar" />
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/jars/classes.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.google.code.gson/gson/2.7/751f548c85fa49f330cecbb1875893f971b33c4e/gson-2.7.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="53a420cd4f49274db6bd43475f8006ba67ef6bbd">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-animated-vector-drawable-25.0.0_dc3f9e2a7c9cb592ad5c46fdf5f10f73fa8309c3.jar" />
+        revision="25.0.0"
+        sha1="751f548c85fa49f330cecbb1875893f971b33c4e">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/gson-2.7_2a07ff7b711f207d66cf1bba96ace9b33401448d.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/31be7faf77e9621e2d6c27c324e7ecc71d189086/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="d29714cc76b38157e3cbd034c66e1ec808eb4c19">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_8d5ea18bdb22f387d98cfe9ce14646f4f3becc98.jar" />
+    </item>
+    <item
+        is-multidex="false"
+        jar="/Users/chaseland/.android/build-cache/2239facc36bd8eae826fd1d4451b988de5f972f8/output/jars/classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="0c6d948e6cb9ea6f535d175fb61ba2930719c0e9">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/classes_32b803edb34777ee086f6fce176b03cd015ff619.jar" />
     </item>
     <item
         is-multidex="false"
@@ -210,12 +336,12 @@
     </item>
     <item
         is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/jars/libs/internal_impl-25.0.0.jar"
+        jar="/Users/chaseland/.gradle/caches/modules-2/files-2.1/com.squareup.okhttp3/okhttp/3.3.0/2b802460eea20f8f2ad9c08c74e0f14718e88aa9/okhttp-3.3.0.jar"
         jumboMode="false"
         optimize="true"
-        revision="23.0.2"
-        sha1="f2e3b9bc1ec25f652e8007ce7774c991e38f6a00">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_b092f28a69e656bdf83879a74dcec6668a7bb26d.jar" />
+        revision="25.0.0"
+        sha1="2b802460eea20f8f2ad9c08c74e0f14718e88aa9">
+        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/okhttp-3.3.0_007e9d6555c92be3006c41c7cd4c5fb7b9e28ce8.jar" />
     </item>
     <item
         is-multidex="false"
@@ -225,33 +351,6 @@
         revision="23.0.2"
         sha1="aa557d71ead91cbf26e0c316a0f593d168303309">
         <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/converter-gson-2.1.0_e678e28d701ea975ce21ad5f71f319e0adfea98d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/libs/internal_impl-25.0.0.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="ee5faf4dee5b6a4364bf51587871047dde7c703a">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/internal_impl-25.0.0_597fb107d1d5cbdb61d8487810e7130b291b1a7d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="07daa0b6e1d455c82a38422ffe287c18823d339a">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-fragment-25.0.0_7a74067042c6bbdff8c85c35b0ae394eb46e3b9d.jar" />
-    </item>
-    <item
-        is-multidex="false"
-        jar="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/jars/classes.jar"
-        jumboMode="false"
-        optimize="true"
-        revision="23.0.2"
-        sha1="76fb65a4b41ea42dab8a1310ed772a2420c96b52">
-        <dex dex="/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/pre-dexed/debug/com.android.support-support-media-compat-25.0.0_91ebad467d31cc1f7bbff5803a35c2d089f3e94c.jar" />
     </item>
 
 </items>

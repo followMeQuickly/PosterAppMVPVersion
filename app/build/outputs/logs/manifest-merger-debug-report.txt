@@ -1,6 +1,6 @@
 -- Merging decision tree log ---
 manifest
-ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:2:1-21:12
+ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:2:1-26:12
 	package
 		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:3:5-51
 		INJECTED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml
@@ -18,18 +18,19 @@ ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/An
 	android:name
 		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:4:22-64
 application
-ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:5:5-19:19
-MERGED from [com.android.support:design:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-v4:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-compat:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-media-compat:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-utils:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-core-ui:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-fragment:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:25:5-20
-MERGED from [com.android.support:support-vector-drawable:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/AndroidManifest.xml:23:5-20
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:22:5-20
-MERGED from [com.android.support:transition:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/AndroidManifest.xml:22:5-20
+ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:5:5-24:19
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/chaseland/.android/build-cache/72c9094d914b08e8020465588bd1e5b739571ec0/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:design:25.0.0] /Users/chaseland/.android/build-cache/850f87ec24e13586e04e7800ed9855d8f798b9b0/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/chaseland/.android/build-cache/13868370f065878a5352176abc4dd010242ab93e/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] /Users/chaseland/.android/build-cache/1bc1f720c6d5ade5e1489edad2fc3eb8c202647c/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-vector-drawable:25.0.0] /Users/chaseland/.android/build-cache/31be7faf77e9621e2d6c27c324e7ecc71d189086/output/AndroidManifest.xml:23:5-20
+MERGED from [com.android.support:transition:25.0.0] /Users/chaseland/.android/build-cache/2239facc36bd8eae826fd1d4451b988de5f972f8/output/AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:support-v4:25.0.0] /Users/chaseland/.android/build-cache/a1a36c6d899d9ec6780d8574c12111fea978b877/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-fragment:25.0.0] /Users/chaseland/.android/build-cache/3888b6d41be17d485ad84001c24be66bae95d17e/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-media-compat:25.0.0] /Users/chaseland/.android/build-cache/56be4c40f075c23f42eb0950fdfb8fc37d5ed169/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-ui:25.0.0] /Users/chaseland/.android/build-cache/407993c53aa51653644b9c8b84b2aeae0fcf548e/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-core-utils:25.0.0] /Users/chaseland/.android/build-cache/9276db41af1f36c37be7b4aa93de6f04a0cb30ba/output/AndroidManifest.xml:25:5-20
+MERGED from [com.android.support:support-compat:25.0.0] /Users/chaseland/.android/build-cache/defd246cda2f78be0eee48ad720517b346dc84b1/output/AndroidManifest.xml:25:5-20
 	android:label
 		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:8:9-41
 	android:supportsRtl
@@ -55,26 +56,33 @@ ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/An
 	android:name
 		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:15:27-74
 activity#com.example.chaseland.moviepostermvp.posterDetail.PosterDetailActivity
-ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:18:9-70
+ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:18:9-23:20
 	android:name
 		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:18:19-68
+meta-data#android.support.PARENT_Activity
+ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:19:12-22:18
+	android:value
+		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:21:16-56
+	android:name
+		ADDED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml:20:16-62
 uses-sdk
 INJECTED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
-MERGED from [com.android.support:design:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:21:5-23:62
-MERGED from [com.android.support:support-v4:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-v4/25.0.0/AndroidManifest.xml:21:5-23:54
-MERGED from [com.android.support:support-compat:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-compat/25.0.0/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-media-compat:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-media-compat/25.0.0/AndroidManifest.xml:21:5-23:63
-MERGED from [com.android.support:support-core-utils:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-utils/25.0.0/AndroidManifest.xml:21:5-23:61
-MERGED from [com.android.support:support-core-ui:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-core-ui/25.0.0/AndroidManifest.xml:21:5-23:58
-MERGED from [com.android.support:support-fragment:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-fragment/25.0.0/AndroidManifest.xml:21:5-23:60
-MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/25.0.0/AndroidManifest.xml:21:5-23:78
-MERGED from [com.android.support:support-vector-drawable:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/support-vector-drawable/25.0.0/AndroidManifest.xml:21:5-43
-MERGED from [com.android.support:animated-vector-drawable:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/animated-vector-drawable/25.0.0/AndroidManifest.xml:20:5-44
-MERGED from [com.android.support:recyclerview-v7:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/recyclerview-v7/25.0.0/AndroidManifest.xml:20:5-43
-MERGED from [com.android.support:transition:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/transition/25.0.0/AndroidManifest.xml:20:5-44
-MERGED from [io.reactivex:rxandroid:1.2.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/io.reactivex/rxandroid/1.2.0/AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:cardview-v7:23.4.0] /Users/chaseland/.android/build-cache/72c9094d914b08e8020465588bd1e5b739571ec0/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:design:25.0.0] /Users/chaseland/.android/build-cache/850f87ec24e13586e04e7800ed9855d8f798b9b0/output/AndroidManifest.xml:21:5-23:62
+MERGED from [com.android.support:appcompat-v7:25.0.0] /Users/chaseland/.android/build-cache/13868370f065878a5352176abc4dd010242ab93e/output/AndroidManifest.xml:21:5-23:78
+MERGED from [com.android.support:animated-vector-drawable:25.0.0] /Users/chaseland/.android/build-cache/1bc1f720c6d5ade5e1489edad2fc3eb8c202647c/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-vector-drawable:25.0.0] /Users/chaseland/.android/build-cache/31be7faf77e9621e2d6c27c324e7ecc71d189086/output/AndroidManifest.xml:21:5-43
+MERGED from [com.android.support:recyclerview-v7:25.0.0] /Users/chaseland/.android/build-cache/8abb036c76d937e236bd0ad0a3204bd7660df80c/output/AndroidManifest.xml:20:5-43
+MERGED from [com.android.support:transition:25.0.0] /Users/chaseland/.android/build-cache/2239facc36bd8eae826fd1d4451b988de5f972f8/output/AndroidManifest.xml:20:5-44
+MERGED from [com.android.support:support-v4:25.0.0] /Users/chaseland/.android/build-cache/a1a36c6d899d9ec6780d8574c12111fea978b877/output/AndroidManifest.xml:21:5-23:54
+MERGED from [com.android.support:support-fragment:25.0.0] /Users/chaseland/.android/build-cache/3888b6d41be17d485ad84001c24be66bae95d17e/output/AndroidManifest.xml:21:5-23:60
+MERGED from [com.android.support:support-media-compat:25.0.0] /Users/chaseland/.android/build-cache/56be4c40f075c23f42eb0950fdfb8fc37d5ed169/output/AndroidManifest.xml:21:5-23:63
+MERGED from [com.android.support:support-core-ui:25.0.0] /Users/chaseland/.android/build-cache/407993c53aa51653644b9c8b84b2aeae0fcf548e/output/AndroidManifest.xml:21:5-23:58
+MERGED from [com.android.support:support-core-utils:25.0.0] /Users/chaseland/.android/build-cache/9276db41af1f36c37be7b4aa93de6f04a0cb30ba/output/AndroidManifest.xml:21:5-23:61
+MERGED from [com.android.support:support-compat:25.0.0] /Users/chaseland/.android/build-cache/defd246cda2f78be0eee48ad720517b346dc84b1/output/AndroidManifest.xml:21:5-23:58
+MERGED from [io.reactivex:rxandroid:1.2.0] /Users/chaseland/.android/build-cache/16f98078e11c3f54c32cececc15422aacc642e52/output/AndroidManifest.xml:19:5-43
 	tools:overrideLibrary
-		ADDED from [com.android.support:design:25.0.0] /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support/design/25.0.0/AndroidManifest.xml:23:9-59
+		ADDED from [com.android.support:design:25.0.0] /Users/chaseland/.android/build-cache/850f87ec24e13586e04e7800ed9855d8f798b9b0/output/AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
 		INJECTED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml
 		INJECTED from /Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/AndroidManifest.xml

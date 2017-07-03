@@ -129,8 +129,9 @@ public class LocalPosterDataSource implements PosterSource {
                 PosterEntry.DESCRIPTION_COLUMN,
                 PosterEntry.VOTE_COLUMN,
                 PosterEntry.RELEASE_DATE_COLUMN,
-                PosterEntry.IMAGE_PATH_COLUMN
-                //PosterEntry.FAVORITE_COLUMN
+                PosterEntry.IMAGE_PATH_COLUMN,
+                PosterEntry.BACKDROP_PATH
+
 
 
         };
@@ -147,14 +148,14 @@ public class LocalPosterDataSource implements PosterSource {
             int vote = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.VOTE_COLUMN));
             String releaseDate = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.RELEASE_DATE_COLUMN));
             String imagePath = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.IMAGE_PATH_COLUMN));
-            //int favoriteRep = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.FAVORITE_COLUMN));
-            //boolean isFavorited = (favoriteRep == 0) ? true : false;
+            String backdropPath = posterCursor.getString(posterCursor.getColumnIndex(PosterEntry.BACKDROP_PATH));
             poster = new Poster();
             poster.setPosterPath(imagePath);
             poster.setTitle(title);
             poster.setVoteCount(vote);
             poster.setReleaseDate(releaseDate);
             poster.setOverview(description);
+            poster.setBackdropPath(backdropPath);
 
         }
         if(posterCursor != null){
@@ -176,10 +177,12 @@ public class LocalPosterDataSource implements PosterSource {
 
         ContentValues values = new ContentValues();
         values.put(PosterEntry.TITLE_COLUMN, poster.getTitle());
-        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getPosterPath());
+        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getOverview());
         values.put(PosterEntry.ID_COLUMN, poster.getId());
         values.put(PosterEntry.VOTE_COLUMN, poster.getVoteCount());
         values.put(PosterEntry.RELEASE_DATE_COLUMN, poster.getReleaseDate());
+        values.put(PosterEntry.BACKDROP_PATH, poster.getBackdropPath());
+        values.put(PosterEntry.IMAGE_PATH_COLUMN, poster.getPosterPath());
 
         db.insert(PosterEntry.TABLE_NAME, null, values);
         db.close();
@@ -194,7 +197,7 @@ public class LocalPosterDataSource implements PosterSource {
     public void deleteAllPosters() {
         SQLiteDatabase db = posterDBHelper.getWritableDatabase();
         //
-        // db.delete(PosterEntry.TABLE_NAME, null, null);
+        db.delete(PosterEntry.TABLE_NAME, null, null);
         db.close();
 
     }

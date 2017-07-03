@@ -17,7 +17,7 @@ public interface PostersContract {
 
         void showFilteringPopMenu();
 
-        void showPosterDetailsUI(String posterId);
+        void showPosterDetailsUI(Poster poster);
 
         void setLoadingIndicator(boolean active);
 

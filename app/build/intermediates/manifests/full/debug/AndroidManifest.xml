@@ -23,7 +23,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.example.chaseland.moviepostermvp.posterDetail.PosterDetailActivity" />
+        <activity android:name="com.example.chaseland.moviepostermvp.posterDetail.PosterDetailActivity" >
+            <meta-data
+                android:name="android.support.PARENT_Activity"
+                android:value=".posters.PostersActivity" />
+        </activity>
     </application>
 
 </manifest>

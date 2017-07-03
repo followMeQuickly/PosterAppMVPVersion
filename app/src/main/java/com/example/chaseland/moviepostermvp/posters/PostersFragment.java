@@ -86,17 +86,17 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // todo: replace with variable. One entry and one exit from the function. ONE RETURN
+        boolean isOptionItemSelected = false;
         if(item.getItemId() == R.id.popular_posters){
             Presenter.changeFilterType(PosterFilterType.POPULAR);
             Presenter.loadPosters(true);
-            return true;
+            isOptionItemSelected = true;
         } else if (item.getItemId() == R.id.highest_rated_posters) {
             Presenter.changeFilterType(PosterFilterType.HIGHEST_RATED);
             Presenter.loadPosters(true);
-            return true;
+            isOptionItemSelected = true;
         }
-        return false;
+        return isOptionItemSelected;
 
     }
 
@@ -118,10 +118,10 @@ public class PostersFragment extends Fragment implements PostersContract.PosterV
     }
 
     @Override
-    public void showPosterDetailsUI(String posterId) {
+    public void showPosterDetailsUI(Poster poster) {
 
         Intent intent = new Intent(getContext(), PosterDetailActivity.class);
-        intent.putExtra(PosterDetailActivity.TASK_DETAIL_ID, posterId);
+        intent.putExtra(PosterDetailActivity.TASK_DETAIL_ID, String.valueOf(poster.getId()));
         startActivity(intent);
     }
 

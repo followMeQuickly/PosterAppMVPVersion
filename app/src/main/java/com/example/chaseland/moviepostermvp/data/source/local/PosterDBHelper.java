@@ -19,9 +19,10 @@ public class PosterDBHelper extends SQLiteOpenHelper {
             PosterPersistenceContract.PosterEntry.VOTE_COLUMN + " TEXT , " +
 
             PosterPersistenceContract.PosterEntry.RELEASE_DATE_COLUMN + " TEXT, " +
+            PosterPersistenceContract.PosterEntry.BACKDROP_PATH + " TEXT, "+
             " UNIQUE ("+ PosterPersistenceContract.PosterEntry.ID_COLUMN +") ON CONFLICT REPLACE);";
 
-    public static final int DATABASE_VERSION = 4;
+public static final int DATABASE_VERSION = 2;
     public static final String DATABASE_NAME = "Posters.db";
 
     public PosterDBHelper(Context context)
@@ -36,10 +37,23 @@ public class PosterDBHelper extends SQLiteOpenHelper {
 
     @Override
     public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+        db.execSQL("DROP TABLE IF EXISTS " + PosterPersistenceContract.PosterEntry.TABLE_NAME + "; ");
         if(newVersion > oldVersion){
+
             onCreate(db);
 
         }
 
+    }
+
+    @Override
+    public void onDowngrade(SQLiteDatabase db, int oldVersion, int newVersion) {
+
+        db.execSQL("DROP TABLE " + PosterPersistenceContract.PosterEntry.TABLE_NAME + ";");
+        if(newVersion > oldVersion){
+
+            onCreate(db);
+
+        }
     }
 }

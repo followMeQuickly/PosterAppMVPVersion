@@ -15,7 +15,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".posterDetail.PosterDetailActivity"/>
+        <activity android:name=".posterDetail.PosterDetailActivity">
+           <meta-data
+               android:name="android.support.PARENT_Activity"
+               android:value=".posters.PostersActivity"
+               />
+        </activity>
     </application>
 
 </manifest>

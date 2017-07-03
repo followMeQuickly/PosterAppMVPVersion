@@ -79,6 +79,10 @@ public class PostersPresenter implements PostersContract.Presenter {
     }
 
     private void processPosters(List<Poster> postersToShow) {
+        for (Poster poster: postersToShow) {
+            posterRepository.savePoster(poster);
+
+        }
         posterView.showPosters(postersToShow);
     }
 
@@ -99,7 +103,7 @@ public class PostersPresenter implements PostersContract.Presenter {
     }
 
     public void OpenPosterDetails(Poster requestedPoster) {
-        posterView.showPosterDetailsUI(String.valueOf(requestedPoster.getId()));
+        posterView.showPosterDetailsUI(requestedPoster);
 
     }
 }

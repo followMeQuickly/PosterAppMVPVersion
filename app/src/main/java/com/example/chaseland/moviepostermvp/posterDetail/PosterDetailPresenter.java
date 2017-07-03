@@ -114,8 +114,8 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
                     @Override
                     public void onNext(Trailer trailer) {
                         Log.d(TAG, "onNext: " + trailer.getYoutube());
-                        String imageUrl = "https://img.youtube.com/vi/" + trailer.getYoutube().get(1).getSource() + "/0.jpg";
-                        //posterDetailView.showTrailerImage(imageUrl);
+
+                        posterDetailView.showTrailers(trailer.getYoutube());
 
 
                     }
@@ -132,12 +132,10 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
     private void showPoster() {
 
-        final Poster[] x = {null};
         posterRepository.getPoster(posterId, new PosterSource.GetPosterCallback() {
             @Override
             public void onPosterLoaded(Poster poster) {
                 if (poster != null) {
-                    x[0] = poster;
                     displayPoster(poster);
                 }
             }
@@ -147,14 +145,14 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
             }
         });
-        this.poster = x[0];
-        posterDetailView.showTrailerImage(poster.getBackdropPath());
     }
 
     private void displayPoster(Poster poster) {
 
         posterDetailView.showPosterDetails(poster);
-        posterDetailView.showPosterImage(poster.getPosterPath());
+        String baseImageUrl = "http://image.tmdb.org/t/p/w500/";
+//        posterDetailView.showPosterImage(baseImageUrl + poster.getPosterPath());
+        posterDetailView.showPosterBackdrop(baseImageUrl + poster.getBackdropPath());
         //todo: add rest of shows here
     }
 }

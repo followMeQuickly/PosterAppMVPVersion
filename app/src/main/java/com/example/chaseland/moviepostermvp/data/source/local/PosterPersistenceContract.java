@@ -16,6 +16,7 @@ public final class PosterPersistenceContract {
         public static final String VOTE_COLUMN = "vote";
         public static final String RELEASE_DATE_COLUMN = "releaseDate";
         public static final String FAVORITE_COLUMN = "favorited";
+        public static final String BACKDROP_PATH = "backdropPath";
 
 
 
