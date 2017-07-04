@@ -1,25 +1,34 @@
 package com.example.chaseland.moviepostermvp.posterDetail;
 
 import android.content.Context;
+import android.graphics.Bitmap;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
+import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toolbar;
 
 import com.example.chaseland.moviepostermvp.R;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
 import com.example.chaseland.moviepostermvp.data.Trailer;
 import com.squareup.picasso.Picasso;
+import com.squareup.picasso.Target;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import static android.content.ContentValues.TAG;
 
 /**
  * Created by chaseland on 2/2/17.
@@ -33,11 +42,15 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     private static final String POSTER_ID_KEY = "PosterId";
 
     private TextView TitleTextView;
+    private TextView SummaryTextView;
+
+    private CollapsingToolbarLayout collapsingToolbar;
     private ImageView PosterImageView;
     private RecyclerView ReviewRecyclerView;
     private RecyclerView TrailerRecyclerView;
 
     private ReviewRecyclerAdapter ReviewRecycleAdapter;
+    private TrailerRecyclerAdapter TrailerRecyclerAdapter;
 
     public static PosterDetailFragment newInstance(String id){
         Bundle args = new Bundle();
@@ -61,6 +74,12 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
                 //todo: implement open review details method in presenter
             }
         });
+        this.TrailerRecyclerAdapter = new TrailerRecyclerAdapter(new ArrayList<Trailer>(), getContext(), new TrailerItemListener() {
+            @Override
+            public void onClick(Trailer trailer) {
+
+            }
+        });
     }
 
     @Nullable
@@ -68,10 +87,22 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_poster_detail, container, false);
         TitleTextView = (TextView)root.findViewById(R.id.poster_detail_title);
+        SummaryTextView = (TextView) root.findViewById(R.id.poster_detail_summary);
         PosterImageView = (ImageView) root.findViewById(R.id.poster_detail_image);
+
+        ((AppCompatActivity) getActivity()).setSupportActionBar((android.support.v7.widget.Toolbar) root.findViewById(R.id.toolbar));
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+
+        collapsingToolbar = (CollapsingToolbarLayout) root.findViewById(R.id.collapsing_toolbar_layout);
+
+
         ReviewRecyclerView = (RecyclerView)root.findViewById(R.id.review_list);
         ReviewRecyclerView.setAdapter(ReviewRecycleAdapter);
-        ReviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
+        ReviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
+
+        TrailerRecyclerView = (RecyclerView) root.findViewById(R.id.trailer_list);
+        TrailerRecyclerView.setAdapter(TrailerRecyclerAdapter);
+        TrailerRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         return root;
     }
@@ -88,6 +119,12 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void showPosterImage(String imageUrl) {
         //todo: create interface to abstract away loading images
+//        imageUrl = "http://image.tmdb.org/t/p/w500" + imageUrl;
+//        Picasso.with(getContext())
+//                .load(imageUrl)
+//                .centerCrop()
+//                .into(PosterImageView);
+        PosterImageView.setImageDrawable(getActivity().getDrawable(R.mipmap.ic_launcher));
     }
 
     @Override
@@ -99,6 +136,8 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     public void showPosterDetails(Poster posterDetails) {
         TitleTextView.setVisibility(View.VISIBLE);
         TitleTextView.setText(posterDetails.getTitle());
+        SummaryTextView.setText(""+posterDetails.getOverview());
+        collapsingToolbar.setTitle(posterDetails.getTitle());
 
     }
 
@@ -119,10 +158,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void showTrailerImage(String imageUrl) {
 
-        Picasso.with(getActivity())
-                .load(imageUrl)
-                .fit()
-                .into(PosterImageView);
+
 
     }
 

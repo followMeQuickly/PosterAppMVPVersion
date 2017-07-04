@@ -176,10 +176,12 @@ public class LocalPosterDataSource implements PosterSource {
 
         ContentValues values = new ContentValues();
         values.put(PosterEntry.TITLE_COLUMN, poster.getTitle());
-        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getPosterPath());
+        values.put(PosterEntry.DESCRIPTION_COLUMN, poster.getOverview());
         values.put(PosterEntry.ID_COLUMN, poster.getId());
         values.put(PosterEntry.VOTE_COLUMN, poster.getVoteCount());
         values.put(PosterEntry.RELEASE_DATE_COLUMN, poster.getReleaseDate());
+        values.put(PosterEntry.IMAGE_PATH_COLUMN, poster.getBackdropPath());
+
 
         db.insert(PosterEntry.TABLE_NAME, null, values);
         db.close();

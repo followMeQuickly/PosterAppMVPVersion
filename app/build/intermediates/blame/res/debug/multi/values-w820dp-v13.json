@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-w820dp-v13/values-w820dp-v13.xml",
+        "outputFile": "C:\\Users\\Chase\\AndroidStudioProjects\\PosterAppMVPVersion\\app\\build\\intermediates\\incremental\\mergeDebugResources\\merged.dir\\values-w820dp-v13\\values-w820dp-v13.xml",
         "map": [
             {
                 "to": {
@@ -11,13 +11,13 @@
                     "endOffset": 94
                 },
                 "from": {
-                    "file": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/src/main/res/values-w820dp/dimens.xml",
+                    "file": "C:\\Users\\Chase\\AndroidStudioProjects\\PosterAppMVPVersion\\app\\src\\main\\res\\values-w820dp\\dimens.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,
-                        "startOffset": 291,
+                        "startOffset": 295,
                         "endColumn": 43,
-                        "endOffset": 330
+                        "endOffset": 334
                     }
                 }
             }

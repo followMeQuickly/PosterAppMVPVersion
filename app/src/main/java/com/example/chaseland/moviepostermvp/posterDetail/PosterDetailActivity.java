@@ -37,6 +37,7 @@ public class PosterDetailActivity extends AppCompatActivity {
         PosterRepository repo = PosterRepository.GetInstance(LocalPosterDataSource.getInstance(this), PosterRemoteDataSource.GetInstance());
 
         new PosterDetailPresenter(posterId, fragment, repo);
+
     }
 
 

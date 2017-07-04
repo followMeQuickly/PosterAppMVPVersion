@@ -139,6 +139,8 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
                 if (poster != null) {
                     x[0] = poster;
                     displayPoster(poster);
+
+                    posterDetailView.showTrailerImage(poster.getBackdropPath());
                 }
             }
 
@@ -148,13 +150,12 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
             }
         });
         this.poster = x[0];
-        posterDetailView.showTrailerImage(poster.getBackdropPath());
     }
 
     private void displayPoster(Poster poster) {
 
         posterDetailView.showPosterDetails(poster);
-        posterDetailView.showPosterImage(poster.getPosterPath());
+        posterDetailView.showPosterImage(poster.getOverview());
         //todo: add rest of shows here
     }
 }

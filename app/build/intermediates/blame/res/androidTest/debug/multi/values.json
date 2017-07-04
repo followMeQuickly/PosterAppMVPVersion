@@ -1,6 +1,6 @@
 [
     {
-        "outputFile": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/incremental/mergeDebugAndroidTestResources/merged.dir/values/values.xml",
+        "outputFile": "C:\\Users\\Chase\\AndroidStudioProjects\\PosterAppMVPVersion\\app\\build\\intermediates\\incremental\\mergeDebugAndroidTestResources\\merged.dir\\values\\values.xml",
         "map": [
             {
                 "to": {
@@ -11,7 +11,7 @@
                     "endOffset": 96
                 },
                 "from": {
-                    "file": "/Users/chaseland/AndroidStudioProjects/MoviePosterMVP/app/build/intermediates/exploded-aar/com.android.support.test/rules/0.5/res/values/values.xml",
+                    "file": "C:\\Users\\Chase\\.android\\build-cache\\134ec296c606f2e5fbbfabb5340da8176833230a\\output\\res\\values\\values.xml",
                     "position": {
                         "startLine": 4,
                         "startColumn": 4,

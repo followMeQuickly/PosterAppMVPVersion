@@ -141,16 +141,16 @@ public class PosterRepository implements PosterSource {
 
     @Override
     public Observable<Posters> getPosters(PosterFilterType filtering) {
-        Observable<Posters> postersObservable = remoteRepo.getPosters(filtering);
-        postersObservable.doOnNext(new Action1<Posters>() {
+        Observable<Posters> postersObservable = remoteRepo.getPosters(filtering).doOnNext(new Action1<Posters>() {
             @Override
             public void call(Posters posters) {
-                for (Poster poster: posters.getResults()) {
-
-                    localRepo.savePoster(poster);
+                for(int i = 0; i < posters.getResults().size(); i++)
+                {
+                    localRepo.savePoster(posters.getResults().get(i));
                 }
             }
         });
+
 
         return postersObservable;
     }
