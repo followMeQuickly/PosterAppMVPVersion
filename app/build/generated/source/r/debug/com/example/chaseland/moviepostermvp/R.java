@@ -2685,7 +2685,7 @@ containing a value of this type.
         public static final int fill_vertical=0x7f0d0029;
         public static final int fixed=0x7f0d003d;
         public static final int gridview=0x7f0d0086;
-        public static final int highest_rated_posters=0x7f0d00a1;
+        public static final int highest_rated_posters=0x7f0d00a3;
         public static final int home=0x7f0d0004;
         public static final int homeAsUp=0x7f0d0011;
         public static final int icon=0x7f0d0047;
@@ -2714,15 +2714,16 @@ containing a value of this type.
         public static final int parallax=0x7f0d002e;
         public static final int parentPanel=0x7f0d004b;
         public static final int pin=0x7f0d002f;
-        public static final int popular_posters=0x7f0d00a0;
+        public static final int popular_posters=0x7f0d00a2;
         public static final int poster_detail_image=0x7f0d0080;
+        public static final int poster_detail_image_2=0x7f0d0081;
         public static final int poster_detail_summary=0x7f0d0082;
-        public static final int poster_detail_title=0x7f0d0081;
         public static final int poster_image=0x7f0d009e;
         public static final int progress_circular=0x7f0d0006;
         public static final int progress_horizontal=0x7f0d0007;
         public static final int radio=0x7f0d0059;
         public static final int review_author=0x7f0d009f;
+        public static final int review_content=0x7f0d00a0;
         public static final int review_list=0x7f0d0084;
         public static final int right=0x7f0d002b;
         public static final int right_icon=0x7f0d0098;
@@ -2775,6 +2776,7 @@ containing a value of this type.
         public static final int topPanel=0x7f0d004c;
         public static final int touch_outside=0x7f0d0075;
         public static final int trailer_list=0x7f0d0083;
+        public static final int trailer_list_item=0x7f0d00a1;
         public static final int transition_current_scene=0x7f0d0009;
         public static final int transition_scene_layoutid_cache=0x7f0d000a;
         public static final int up=0x7f0d000b;

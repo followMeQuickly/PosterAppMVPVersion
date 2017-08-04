@@ -734,7 +734,7 @@ int id fill_horizontal 0x7f0d0033
 int id fill_vertical 0x7f0d0029
 int id fixed 0x7f0d003d
 int id gridview 0x7f0d0086
-int id highest_rated_posters 0x7f0d00a1
+int id highest_rated_posters 0x7f0d00a3
 int id home 0x7f0d0004
 int id homeAsUp 0x7f0d0011
 int id icon 0x7f0d0047
@@ -763,15 +763,16 @@ int id notification_main_column_container 0x7f0d008f
 int id parallax 0x7f0d002e
 int id parentPanel 0x7f0d004b
 int id pin 0x7f0d002f
-int id popular_posters 0x7f0d00a0
+int id popular_posters 0x7f0d00a2
 int id poster_detail_image 0x7f0d0080
+int id poster_detail_image_2 0x7f0d0081
 int id poster_detail_summary 0x7f0d0082
-int id poster_detail_title 0x7f0d0081
 int id poster_image 0x7f0d009e
 int id progress_circular 0x7f0d0006
 int id progress_horizontal 0x7f0d0007
 int id radio 0x7f0d0059
 int id review_author 0x7f0d009f
+int id review_content 0x7f0d00a0
 int id review_list 0x7f0d0084
 int id right 0x7f0d002b
 int id right_icon 0x7f0d0098
@@ -824,6 +825,7 @@ int id top 0x7f0d002d
 int id topPanel 0x7f0d004c
 int id touch_outside 0x7f0d0075
 int id trailer_list 0x7f0d0083
+int id trailer_list_item 0x7f0d00a1
 int id transition_current_scene 0x7f0d0009
 int id transition_scene_layoutid_cache 0x7f0d000a
 int id up 0x7f0d000b

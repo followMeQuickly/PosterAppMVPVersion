@@ -6,9 +6,11 @@ import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
 import com.example.chaseland.moviepostermvp.data.Reviews;
 import com.example.chaseland.moviepostermvp.data.Trailer;
+import com.example.chaseland.moviepostermvp.data.Youtube;
 import com.example.chaseland.moviepostermvp.data.source.PosterRepository;
 import com.example.chaseland.moviepostermvp.data.source.PosterSource;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import rx.Observer;
@@ -96,12 +98,14 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
 
     }
     private void loadTrailers(boolean forceUpdate, boolean showLoadingUi) {
+        final List<Youtube> youtubeList = new ArrayList<Youtube>();
         posterRepository.getTrailer(posterId)
                 .subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<Trailer>() {
                     @Override
                     public void onCompleted() {
+
 
                     }
 
@@ -114,7 +118,8 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
                     @Override
                     public void onNext(Trailer trailer) {
                         Log.d(TAG, "onNext: " + trailer.getYoutube());
-                        String imageUrl = "https://img.youtube.com/vi/" + trailer.getYoutube().get(1).getSource() + "/0.jpg";
+                        posterDetailView.showTrailers(trailer.getYoutube());
+
                         //posterDetailView.showTrailerImage(imageUrl);
 
 
@@ -155,7 +160,7 @@ public class PosterDetailPresenter implements PosterDetailContract.Presenter {
     private void displayPoster(Poster poster) {
 
         posterDetailView.showPosterDetails(poster);
-        posterDetailView.showPosterImage(poster.getOverview());
+        posterDetailView.showPosterImage(poster.getBackdropPath());
         //todo: add rest of shows here
     }
 }

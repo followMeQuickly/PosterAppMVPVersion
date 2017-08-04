@@ -21,6 +21,15 @@
     </item>
     <item
         is-multidex="false"
+        jar="C:\Users\Chase\.android\build-cache\3a917dcedebcb883c24aa2b32315ea31d2201323\output\jars\classes.jar"
+        jumboMode="false"
+        optimize="true"
+        revision="25.0.0"
+        sha1="bcee2598dbb74f6d043225a0d7e178b0c7ea4006">
+        <dex dex="C:\Users\Chase\AndroidStudioProjects\PosterAppMVPVersion\app\build\intermediates\pre-dexed\debug\classes_36ba767c656a94e3577871829f4e1eb4fb85ac3a.jar" />
+    </item>
+    <item
+        is-multidex="false"
         jar="C:\Users\Chase\.android\build-cache\35d87fe273b3c73632682785df7b64135ce36c8f\output\jars\classes.jar"
         jumboMode="false"
         optimize="true"

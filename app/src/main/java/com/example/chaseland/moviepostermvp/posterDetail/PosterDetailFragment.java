@@ -1,6 +1,7 @@
 package com.example.chaseland.moviepostermvp.posterDetail;
 
 import android.content.Context;
+import android.content.res.ColorStateList;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
@@ -8,6 +9,7 @@ import android.support.annotation.Nullable;
 import android.support.design.widget.CollapsingToolbarLayout;
 import android.support.v4.app.Fragment;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -16,17 +18,21 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toolbar;
 
 import com.example.chaseland.moviepostermvp.R;
 import com.example.chaseland.moviepostermvp.data.Poster;
 import com.example.chaseland.moviepostermvp.data.Review;
-import com.example.chaseland.moviepostermvp.data.Trailer;
+import com.example.chaseland.moviepostermvp.data.Youtube;
+import com.squareup.picasso.Callback;
 import com.squareup.picasso.Picasso;
 import com.squareup.picasso.Target;
+import com.squareup.picasso.Transformation;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.concurrent.Executors;
+
+import javax.xml.transform.Source;
 
 import static android.content.ContentValues.TAG;
 
@@ -41,16 +47,16 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     private static final String POSTER_IMAGE_TRANSITION_KEY = "transition";
     private static final String POSTER_ID_KEY = "PosterId";
 
-    private TextView TitleTextView;
     private TextView SummaryTextView;
 
     private CollapsingToolbarLayout collapsingToolbar;
     private ImageView PosterImageView;
+    private ImageView PosterImageViewTest;
     private RecyclerView ReviewRecyclerView;
     private RecyclerView TrailerRecyclerView;
 
     private ReviewRecyclerAdapter ReviewRecycleAdapter;
-    private TrailerRecyclerAdapter TrailerRecyclerAdapter;
+    private YoutubeRecyclerViewAdapter youtubeRecyclerViewAdapter;
 
     public static PosterDetailFragment newInstance(String id){
         Bundle args = new Bundle();
@@ -74,9 +80,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
                 //todo: implement open review details method in presenter
             }
         });
-        this.TrailerRecyclerAdapter = new TrailerRecyclerAdapter(new ArrayList<Trailer>(), getContext(), new TrailerItemListener() {
+        this.youtubeRecyclerViewAdapter = new YoutubeRecyclerViewAdapter(new ArrayList<Youtube>(), getContext(), new YoutubeTrailerItemListener() {
             @Override
-            public void onClick(Trailer trailer) {
+            public void onClick(Youtube youtube) {
 
             }
         });
@@ -86,14 +92,18 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View root = inflater.inflate(R.layout.fragment_poster_detail, container, false);
-        TitleTextView = (TextView)root.findViewById(R.id.poster_detail_title);
         SummaryTextView = (TextView) root.findViewById(R.id.poster_detail_summary);
         PosterImageView = (ImageView) root.findViewById(R.id.poster_detail_image);
 
+        PosterImageViewTest = (ImageView) root.findViewById(R.id.poster_detail_image_2);
         ((AppCompatActivity) getActivity()).setSupportActionBar((android.support.v7.widget.Toolbar) root.findViewById(R.id.toolbar));
-        ((AppCompatActivity) getActivity()).getSupportActionBar().setHomeButtonEnabled(true);
+        ((AppCompatActivity)getActivity()).getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        ((AppCompatActivity) getActivity()).getSupportActionBar().setDisplayShowHomeEnabled(true);
+
 
         collapsingToolbar = (CollapsingToolbarLayout) root.findViewById(R.id.collapsing_toolbar_layout);
+        collapsingToolbar.setExpandedTitleTextColor(ColorStateList.valueOf(0));
+
 
 
         ReviewRecyclerView = (RecyclerView)root.findViewById(R.id.review_list);
@@ -101,7 +111,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
         ReviewRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.VERTICAL, false));
 
         TrailerRecyclerView = (RecyclerView) root.findViewById(R.id.trailer_list);
-        TrailerRecyclerView.setAdapter(TrailerRecyclerAdapter);
+        TrailerRecyclerView.setAdapter(youtubeRecyclerViewAdapter);
         TrailerRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
 
         return root;
@@ -119,12 +129,34 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     @Override
     public void showPosterImage(String imageUrl) {
         //todo: create interface to abstract away loading images
-//        imageUrl = "http://image.tmdb.org/t/p/w500" + imageUrl;
-//        Picasso.with(getContext())
-//                .load(imageUrl)
-//                .centerCrop()
-//                .into(PosterImageView);
-        PosterImageView.setImageDrawable(getActivity().getDrawable(R.mipmap.ic_launcher));
+        imageUrl = "http://image.tmdb.org/t/p/w500" + imageUrl;
+// this picasso call actually makes the image fit.
+        //// TODO: 7/6/2017 figure out how to get image to fit with palette call.
+//        new Picasso.Builder(getContext()).executor(Executors.newSingleThreadExecutor())
+        Picasso.with(getContext())
+                .load(imageUrl)
+                .fit()
+                .transform(new Transformation() {
+                    @Override
+                    public Bitmap transform(Bitmap source) {
+                        Palette.Builder builder = new Palette.Builder(source);
+                        builder.setRegion(0, 0, PosterImageView.getWidth(), 50);
+                        builder.maximumColorCount(2);
+                        Palette palette = builder.generate();
+                        //.collapsingToolbar.setContentScrimColor(palette.getSwatches().get(0).getRgb());
+//                        collapsingToolbar.setBackgroundColor(palette.getVibrantColor(0));
+                        return source;
+                    }
+
+                    @Override
+                    public String key() {
+                        return "";
+                    }
+                })
+                .into(PosterImageView);
+
+
+
     }
 
     @Override
@@ -134,8 +166,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
     @Override
     public void showPosterDetails(Poster posterDetails) {
-        TitleTextView.setVisibility(View.VISIBLE);
-        TitleTextView.setText(posterDetails.getTitle());
+
         SummaryTextView.setText(""+posterDetails.getOverview());
         collapsingToolbar.setTitle(posterDetails.getTitle());
 
@@ -143,7 +174,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
     @Override
     public void hideTitle() {
-        TitleTextView.setVisibility(View.INVISIBLE);
+
 
     }
 
@@ -151,8 +182,6 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     public void showReviews(List<Review> reviews) {
 
         ReviewRecycleAdapter.replacePosters(reviews);
-
-
     }
 
     @Override
@@ -168,7 +197,9 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
 
     @Override
-    public void showTrailers(List<Trailer> trailers) {
+    public void showTrailers(List<Youtube> youtubeVideos) {
+
+        youtubeRecyclerViewAdapter.replaceYoutubeList(youtubeVideos);
 
     }
 
@@ -178,18 +209,46 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
     }
     public class TrailerHolder extends RecyclerView.ViewHolder{
 
+        private ImageView trailerImage;
+        private View itemView;
+        private Context context;
         public TrailerHolder(View itemView) {
             super(itemView);
+            this.itemView = itemView;
+            this.context = itemView.getContext();
+            trailerImage = (ImageView) itemView.findViewById(R.id.trailer_list_item);
+        }
+        public void setTrailerInfo(final Youtube trailer)
+        {
+            String url = "https://img.youtube.com/vi/" + trailer.getSource()+ "/1.jpg";
+            Picasso.with(context).load(url).resize(200, 200).into(new Target() {
+                @Override
+                public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom from) {
+
+                    trailerImage.setImageBitmap(bitmap);
+                }
+
+                @Override
+                public void onBitmapFailed(Drawable errorDrawable) {
+                    Log.d(TAG, "onBitmapFailed: ");
+
+                }
+
+                @Override
+                public void onPrepareLoad(Drawable placeHolderDrawable) {
+
+                }
+            });
         }
     }
 
-    public class TrailerRecyclerAdapter extends RecyclerView.Adapter<TrailerHolder> {
+    public class YoutubeRecyclerViewAdapter extends RecyclerView.Adapter<TrailerHolder> {
 
-        private List<Trailer> trailers;
+        private List<Youtube> youtubeList;
         private Context context;
-        private TrailerItemListener listener;
-        public TrailerRecyclerAdapter(List<Trailer> trailer, Context context, TrailerItemListener listener){
-            this.trailers = trailer;
+        private YoutubeTrailerItemListener listener;
+        public YoutubeRecyclerViewAdapter(List<Youtube> youtubeList, Context context, YoutubeTrailerItemListener listener){
+            this.youtubeList = youtubeList;
             this.context = context;
             this.listener = listener;
 
@@ -197,18 +256,26 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
         @Override
         public TrailerHolder onCreateViewHolder(ViewGroup parent, int viewType) {
             LayoutInflater inflater = LayoutInflater.from(context);
-            return null;
+            View view = inflater.inflate(R.layout.trailer_item, parent, false);
+            TrailerHolder holder = new TrailerHolder(view);
+            return holder;
         }
 
 
         @Override
         public void onBindViewHolder(TrailerHolder holder, int position) {
+            holder.setTrailerInfo(youtubeList.get(position));
 
+        }
+        public void replaceYoutubeList(List<Youtube> youtubeList)
+        {
+            this.youtubeList = youtubeList;
+            notifyDataSetChanged();
         }
 
         @Override
         public int getItemCount() {
-            return 0;
+            return youtubeList.size();
         }
     }
     public class ReviewRecyclerAdapter extends RecyclerView.Adapter<ReviewHolder> {
@@ -234,7 +301,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
         @Override
         public void onBindViewHolder(ReviewHolder holder, int position) {
 
-            holder.setReviewInfo(reviews.get(position));
+            holder.setReviewInfo(reviews.get(position), position);
         }
 
         public void replacePosters(List<Review> reviews) {
@@ -252,6 +319,7 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
         private ReviewItemListener reviewItemListener;
         private View itemView;
+        private int position = -1;
         public ReviewHolder(View itemView, ReviewItemListener listener) {
             super(itemView);
             this.itemView = itemView;
@@ -259,16 +327,38 @@ public class PosterDetailFragment extends Fragment implements PosterDetailContra
 
         }
 
-        public void setReviewInfo(final Review review) {
+        public void setReviewInfo(final Review review, int position) {
             TextView textView = (TextView) itemView.findViewById(R.id.review_author);
             textView.setText(review.getAuthor());
+
+            TextView contentTextView = (TextView) itemView.findViewById(R.id.review_content);
+            contentTextView.setMaxLines(2);
+            contentTextView.setText(review.getContent());
+            contentTextView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    TextView current = (TextView)v;
+                    if(current != null)
+                    {
+                        int maxLines = current.getMaxLines();
+                        if(maxLines == 2)
+                        {
+                            current.setMaxLines(Integer.MAX_VALUE);
+                        }
+                        else{
+                            current.setMaxLines(2);
+                        }
+                    }
+                }
+            });
+
         }
     }
 
     public interface ReviewItemListener{
         void onClick(Review review);
     }
-    public interface TrailerItemListener{
-        void onClick(Trailer trailer);
+    public interface YoutubeTrailerItemListener {
+        void onClick(Youtube trailer);
     }
 }

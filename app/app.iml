@@ -96,6 +96,7 @@
     <orderEntry type="jdk" jdkName="Android API 23 Platform (2)" jdkType="Android SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" exported="" name="okio-1.8.0" level="project" />
+    <orderEntry type="library" exported="" name="palette-v7-23.2.1" level="project" />
     <orderEntry type="library" exported="" name="design-25.0.0" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="powermock-api-support-1.6.2" level="project" />
     <orderEntry type="library" exported="" scope="TEST" name="runner-0.5" level="project" />

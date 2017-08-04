@@ -29,17 +29,16 @@ public class LocalPosterDataSource implements PosterSource {
 
     private static LocalPosterDataSource INSTANCE = null;
 
-    private LocalPosterDataSource(Context context){
+    private LocalPosterDataSource(Context context) {
         posterDBHelper = new PosterDBHelper(context);
 
     }
 
-    public static LocalPosterDataSource getInstance(Context context){
-        if(INSTANCE == null){
+    public static LocalPosterDataSource getInstance(Context context) {
+        if (INSTANCE == null) {
             INSTANCE = new LocalPosterDataSource(context);
         }
         return INSTANCE;
-
 
 
     }
@@ -55,20 +54,21 @@ public class LocalPosterDataSource implements PosterSource {
         List<Poster> posters = new ArrayList<>();
         SQLiteDatabase db = posterDBHelper.getReadableDatabase();
         String[] projections = {
-               PosterEntry.ID_COLUMN,
-               PosterEntry.TITLE_COLUMN,
-               PosterEntry.DESCRIPTION_COLUMN,
-               PosterEntry.VOTE_COLUMN,
-               PosterEntry.RELEASE_DATE_COLUMN,
-               PosterEntry.FAVORITE_COLUMN
+                PosterEntry.ID_COLUMN,
+                PosterEntry.TITLE_COLUMN,
+                PosterEntry.DESCRIPTION_COLUMN,
+                PosterEntry.VOTE_COLUMN,
+                PosterEntry.RELEASE_DATE_COLUMN,
+                PosterEntry.FAVORITE_COLUMN,
+                PosterEntry.BACKDROP_PATH
 
 
         };
 
         Cursor posterCursor = db.query(PosterEntry.TABLE_NAME, projections, null, null, null, null, null);
 
-        if(posterCursor != null && posterCursor.getCount() > 0) {
-            while(posterCursor.moveToNext()){
+        if (posterCursor != null && posterCursor.getCount() > 0) {
+            while (posterCursor.moveToNext()) {
                 String posterId = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.ID_COLUMN));
                 String description = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.DESCRIPTION_COLUMN));
                 String title = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.TITLE_COLUMN));
@@ -81,14 +81,13 @@ public class LocalPosterDataSource implements PosterSource {
 
             }
         }
-        if(posterCursor != null){
+        if (posterCursor != null) {
             posterCursor.close();
         }
         db.close();
-        if(posters.isEmpty()){
+        if (posters.isEmpty()) {
             callback.onDataNotAvailable();
-        }
-        else{
+        } else {
             callback.onPostersLoaded(posters);
         }
 
@@ -129,17 +128,17 @@ public class LocalPosterDataSource implements PosterSource {
                 PosterEntry.DESCRIPTION_COLUMN,
                 PosterEntry.VOTE_COLUMN,
                 PosterEntry.RELEASE_DATE_COLUMN,
-                PosterEntry.IMAGE_PATH_COLUMN
-                //PosterEntry.FAVORITE_COLUMN
+                PosterEntry.IMAGE_PATH_COLUMN,
+                PosterEntry.BACKDROP_PATH
 
 
         };
 
-        String selection  = PosterEntry.ID_COLUMN + " LIKE ?";
-        String[] selectionArgs = { posterId };
+        String selection = PosterEntry.ID_COLUMN + " LIKE ?";
+        String[] selectionArgs = {posterId};
         Cursor posterCursor = db.query(PosterEntry.TABLE_NAME, projections, selection, selectionArgs, null, null, null);
         Poster poster = null;
-        if(posterCursor != null && posterCursor.getCount() > 0){
+        if (posterCursor != null && posterCursor.getCount() > 0) {
             posterCursor.moveToFirst();
 
             String description = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.DESCRIPTION_COLUMN));
@@ -147,6 +146,7 @@ public class LocalPosterDataSource implements PosterSource {
             int vote = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.VOTE_COLUMN));
             String releaseDate = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.RELEASE_DATE_COLUMN));
             String imagePath = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.IMAGE_PATH_COLUMN));
+            String backdropPath = posterCursor.getString(posterCursor.getColumnIndexOrThrow(PosterEntry.BACKDROP_PATH));
             //int favoriteRep = posterCursor.getInt(posterCursor.getColumnIndexOrThrow(PosterEntry.FAVORITE_COLUMN));
             //boolean isFavorited = (favoriteRep == 0) ? true : false;
             poster = new Poster();
@@ -155,15 +155,15 @@ public class LocalPosterDataSource implements PosterSource {
             poster.setVoteCount(vote);
             poster.setReleaseDate(releaseDate);
             poster.setOverview(description);
+            poster.setBackdropPath(backdropPath);
 
         }
-        if(posterCursor != null){
+        if (posterCursor != null) {
             posterCursor.close();
         }
-        if(poster == null){
+        if (poster == null) {
             callback.onDataNotAvailable();
-        }
-        else{
+        } else {
             callback.onPosterLoaded(poster);
         }
 
@@ -180,7 +180,8 @@ public class LocalPosterDataSource implements PosterSource {
         values.put(PosterEntry.ID_COLUMN, poster.getId());
         values.put(PosterEntry.VOTE_COLUMN, poster.getVoteCount());
         values.put(PosterEntry.RELEASE_DATE_COLUMN, poster.getReleaseDate());
-        values.put(PosterEntry.IMAGE_PATH_COLUMN, poster.getBackdropPath());
+        values.put(PosterEntry.IMAGE_PATH_COLUMN, poster.getPosterPath());
+        values.put(PosterEntry.BACKDROP_PATH, poster.getBackdropPath());
 
 
         db.insert(PosterEntry.TABLE_NAME, null, values);

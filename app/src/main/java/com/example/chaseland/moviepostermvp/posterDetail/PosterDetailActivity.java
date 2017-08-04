@@ -27,6 +27,7 @@ public class PosterDetailActivity extends AppCompatActivity {
         supportPostponeEnterTransition();
         PosterDetailFragment fragment = (PosterDetailFragment) getSupportFragmentManager().findFragmentById(R.id.contentFrame);
 
+
         String posterId = getIntent().getStringExtra(TASK_DETAIL_ID);
         String transitionName = getIntent().getStringExtra(TASK_DETAIL_TRANSITION_NAME);
         if (fragment == null) {

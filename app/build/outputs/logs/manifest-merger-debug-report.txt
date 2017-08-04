@@ -24,6 +24,7 @@ MERGED from [com.android.support:appcompat-v7:25.0.0] C:\Users\Chase\.android\bu
 MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Chase\.android\build-cache\86130f061a92f5105409efb5f754c9d2d6297646\output\AndroidManifest.xml:22:5-20
 MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Chase\.android\build-cache\d2ba0ea17d20c1fc0bd52633d0649f9014de51f2\output\AndroidManifest.xml:23:5-20
 MERGED from [com.android.support:transition:25.0.0] C:\Users\Chase\.android\build-cache\c0d836af2a17af92db5b45c394d48889d92fff96\output\AndroidManifest.xml:22:5-20
+MERGED from [com.android.support:palette-v7:23.2.1] C:\Users\Chase\.android\build-cache\3a917dcedebcb883c24aa2b32315ea31d2201323\output\AndroidManifest.xml:22:5-23:19
 MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Chase\.android\build-cache\0a578b88e152395de88354911e53538831355ead\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Chase\.android\build-cache\44c5246fa64d18e8dab0582caf9abf8425657a4e\output\AndroidManifest.xml:25:5-20
 MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Chase\.android\build-cache\801f69bf65c855dca4aa00ae7f6c391045477306\output\AndroidManifest.xml:25:5-20
@@ -66,13 +67,14 @@ MERGED from [com.android.support:animated-vector-drawable:25.0.0] C:\Users\Chase
 MERGED from [com.android.support:support-vector-drawable:25.0.0] C:\Users\Chase\.android\build-cache\d2ba0ea17d20c1fc0bd52633d0649f9014de51f2\output\AndroidManifest.xml:21:5-43
 MERGED from [com.android.support:recyclerview-v7:25.0.0] C:\Users\Chase\.android\build-cache\4c1cf4c242b9b80e05c1d8f8e988912ca94c90b7\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:transition:25.0.0] C:\Users\Chase\.android\build-cache\c0d836af2a17af92db5b45c394d48889d92fff96\output\AndroidManifest.xml:20:5-44
+MERGED from [io.reactivex:rxandroid:1.2.0] C:\Users\Chase\.android\build-cache\a7e3f6beda690eb52bc0cbcac542216bee9b5368\output\AndroidManifest.xml:19:5-43
+MERGED from [com.android.support:palette-v7:23.2.1] C:\Users\Chase\.android\build-cache\3a917dcedebcb883c24aa2b32315ea31d2201323\output\AndroidManifest.xml:20:5-43
 MERGED from [com.android.support:support-v4:25.0.0] C:\Users\Chase\.android\build-cache\0a578b88e152395de88354911e53538831355ead\output\AndroidManifest.xml:21:5-23:54
 MERGED from [com.android.support:support-fragment:25.0.0] C:\Users\Chase\.android\build-cache\44c5246fa64d18e8dab0582caf9abf8425657a4e\output\AndroidManifest.xml:21:5-23:60
 MERGED from [com.android.support:support-media-compat:25.0.0] C:\Users\Chase\.android\build-cache\801f69bf65c855dca4aa00ae7f6c391045477306\output\AndroidManifest.xml:21:5-23:63
 MERGED from [com.android.support:support-core-ui:25.0.0] C:\Users\Chase\.android\build-cache\7ba9a1ad06cefce0f64c95cacbf5c1634d6fe02c\output\AndroidManifest.xml:21:5-23:58
 MERGED from [com.android.support:support-core-utils:25.0.0] C:\Users\Chase\.android\build-cache\2406f8cc89a41f55430d75db8a4b9d3ce49ef2ea\output\AndroidManifest.xml:21:5-23:61
 MERGED from [com.android.support:support-compat:25.0.0] C:\Users\Chase\.android\build-cache\b5411c6f603460eadccb0285ded76bfeb9c150c2\output\AndroidManifest.xml:21:5-23:58
-MERGED from [io.reactivex:rxandroid:1.2.0] C:\Users\Chase\.android\build-cache\a7e3f6beda690eb52bc0cbcac542216bee9b5368\output\AndroidManifest.xml:19:5-43
 	tools:overrideLibrary
 		ADDED from [com.android.support:design:25.0.0] C:\Users\Chase\.android\build-cache\35d87fe273b3c73632682785df7b64135ce36c8f\output\AndroidManifest.xml:23:9-59
 	android:targetSdkVersion
