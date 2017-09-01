@@ -76,7 +76,7 @@ public class FakePosterRemoteDataSource implements PosterSource {
 
     @Override
     public Observable<Posters> getPosters(PosterFilterType filtering) {
-        return null;
+        return Observable.just(new Posters());
     }
 
     @Override
